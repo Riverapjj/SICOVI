@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SICOVI
 {
-    public partial class Form1 : MaterialSkin.Controls.MaterialForm
+    public partial class formLogin : MaterialSkin.Controls.MaterialForm
     {
-        public Form1()
+        public formLogin()
         {
             InitializeComponent();
         }
