@@ -28,54 +28,73 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtContra = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnLogin = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // materialLabel1
+            // txtUsuario
             // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(172, 143);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(108, 19);
-            this.materialLabel1.TabIndex = 0;
-            this.materialLabel1.Text = "materialLabel1";
+            this.txtUsuario.Depth = 0;
+            this.txtUsuario.Hint = "Usuario";
+            this.txtUsuario.Location = new System.Drawing.Point(70, 104);
+            this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.Size = new System.Drawing.Size(209, 23);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.UseSystemPasswordChar = false;
             // 
-            // materialLabel2
+            // txtContra
             // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
-            this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(172, 192);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(108, 19);
-            this.materialLabel2.TabIndex = 1;
-            this.materialLabel2.Text = "materialLabel2";
+            this.txtContra.Depth = 0;
+            this.txtContra.Hint = "Contraseña";
+            this.txtContra.Location = new System.Drawing.Point(70, 152);
+            this.txtContra.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtContra.Name = "txtContra";
+            this.txtContra.PasswordChar = '\0';
+            this.txtContra.SelectedText = "";
+            this.txtContra.SelectionLength = 0;
+            this.txtContra.SelectionStart = 0;
+            this.txtContra.Size = new System.Drawing.Size(209, 23);
+            this.txtContra.TabIndex = 1;
+            this.txtContra.UseSystemPasswordChar = false;
+            // 
+            // btnLogin
+            // 
+            this.btnLogin.Depth = 0;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.Location = new System.Drawing.Point(70, 205);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Primary = true;
+            this.btnLogin.Size = new System.Drawing.Size(209, 34);
+            this.btnLogin.TabIndex = 3;
+            this.btnLogin.Text = "INICIAR SESIÓN";
+            this.btnLogin.UseVisualStyleBackColor = true;
             // 
             // formLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 403);
-            this.Controls.Add(this.materialLabel2);
-            this.Controls.Add(this.materialLabel1);
+            this.ClientSize = new System.Drawing.Size(371, 299);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtContra);
+            this.Controls.Add(this.txtUsuario);
             this.Name = "formLogin";
             this.Text = "Login";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsuario;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtContra;
+        private MaterialSkin.Controls.MaterialRaisedButton btnLogin;
     }
 }
 
