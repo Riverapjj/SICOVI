@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.14.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
@@ -49,16 +52,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="formPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="formPacientes.Designer.cs">
+      <DependentUpon>formPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPacienteVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPacienteVacuna.Designer.cs">
+      <DependentUpon>formPacienteVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPrincipal.Designer.cs">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formControles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formControles.Designer.cs">
+      <DependentUpon>formControles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVacunas.Designer.cs">
+      <DependentUpon>formVacunas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="formControles.resx">
+      <DependentUpon>formControles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPacientes.resx">
+      <DependentUpon>formPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPacienteVacuna.resx">
+      <DependentUpon>formPacienteVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPrincipal.resx">
+      <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formVacunas.resx">
+      <DependentUpon>formVacunas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
