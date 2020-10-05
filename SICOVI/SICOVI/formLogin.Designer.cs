@@ -159,6 +159,7 @@
             this.materialRaisedButton1.TabIndex = 12;
             this.materialRaisedButton1.Text = "Iniciar sesión";
             this.materialRaisedButton1.UseVisualStyleBackColor = false;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // formLogin
             // 
