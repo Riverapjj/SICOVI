@@ -20,7 +20,7 @@ namespace SICOVI
         public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
         public string Nombre_madre { get => nombre_madre; set => nombre_madre = value; }
         public string Nombre_padre { get => nombre_padre; set => nombre_padre = value; }
-        public bool Nombre_responsable { get => nombre_responsable; set => nombre_responsable = value; }
+        public string Nombre_responsable { get => nombre_responsable; set => nombre_responsable = value; }
         public string Num_dui_resposable { get => num_dui_resposable; set => num_dui_resposable = value; }
         public string Num_seguro_responsable { get => num_seguro_responsable; set => num_seguro_responsable = value; }
     }

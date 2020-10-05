@@ -39,6 +39,8 @@
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.txtDescripcion = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -76,7 +78,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(338, 89);
+            this.iconButton1.Location = new System.Drawing.Point(30, 95);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(44, 19);
@@ -87,7 +89,7 @@
             // 
             this.txNombre.Depth = 0;
             this.txNombre.Hint = "Nombre de vacuna";
-            this.txNombre.Location = new System.Drawing.Point(386, 89);
+            this.txNombre.Location = new System.Drawing.Point(78, 95);
             this.txNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txNombre.Name = "txNombre";
             this.txNombre.PasswordChar = '\0';
@@ -108,7 +110,7 @@
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconSize = 25;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(336, 145);
+            this.iconButton4.Location = new System.Drawing.Point(28, 151);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Rotation = 0D;
             this.iconButton4.Size = new System.Drawing.Size(32, 19);
@@ -119,7 +121,7 @@
             // 
             this.txtEdad.Depth = 0;
             this.txtEdad.Hint = "Edad de aplicación";
-            this.txtEdad.Location = new System.Drawing.Point(386, 145);
+            this.txtEdad.Location = new System.Drawing.Point(78, 151);
             this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.PasswordChar = '\0';
@@ -196,11 +198,45 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // iconButton2
+            // 
+            this.iconButton2.Enabled = false;
+            this.iconButton2.FlatAppearance.BorderSize = 0;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Comment;
+            this.iconButton2.IconColor = System.Drawing.Color.Black;
+            this.iconButton2.IconSize = 25;
+            this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton2.Location = new System.Drawing.Point(381, 95);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(32, 19);
+            this.iconButton2.TabIndex = 31;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Depth = 0;
+            this.txtDescripcion.Hint = "Descripción";
+            this.txtDescripcion.Location = new System.Drawing.Point(431, 95);
+            this.txtDescripcion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.PasswordChar = '\0';
+            this.txtDescripcion.SelectedText = "";
+            this.txtDescripcion.SelectionLength = 0;
+            this.txtDescripcion.SelectionStart = 0;
+            this.txtDescripcion.Size = new System.Drawing.Size(213, 23);
+            this.txtDescripcion.TabIndex = 30;
+            this.txtDescripcion.UseSystemPasswordChar = false;
+            // 
             // formVacunas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 518);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -232,5 +268,7 @@
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDescripcion;
     }
 }

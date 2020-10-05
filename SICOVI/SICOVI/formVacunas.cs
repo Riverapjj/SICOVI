@@ -27,14 +27,17 @@ namespace SICOVI
         {
             txNombre.Clear();
             txtEdad.Clear();
+            txtDescripcion.Clear();
         }
 
       
-            private void borrar()
-            {
-                errorProvider1.SetError(txtEdad, "");
-                errorProvider1.SetError(txNombre, "");
-            }
+        private void borrar()
+        {
+            errorProvider1.SetError(txtEdad, "");
+            errorProvider1.SetError(txNombre, "");
+            errorProvider1.SetError(txtDescripcion, "");
+        }
+
         private bool validar()
         {
             bool validar = true;
@@ -44,6 +47,10 @@ namespace SICOVI
                 errorProvider1.SetError(txtEdad, "NO SE PERMITEN ESPSCIOS VACIOS");
             }
             if(txNombre.Text == "")
+            {
+                errorProvider1.SetError(txNombre, "NO SE PERMITEN ESPACIOS VACIOS");
+            }
+            if (txtDescripcion.Text == "")
             {
                 errorProvider1.SetError(txNombre, "NO SE PERMITEN ESPACIOS VACIOS");
             }
@@ -80,6 +87,7 @@ namespace SICOVI
             {
                 control.Nombre_vacuna = txNombre.Text;
                 control.Edad_aplicacion = edad;
+                control.Descripción_vacuna = txtDescripcion.Text;
                 lista.Add(control);
                 actualizar();
                     limpiar();

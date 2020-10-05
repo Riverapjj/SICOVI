@@ -24,6 +24,8 @@ namespace SICOVI
             txtNomMadre.Clear();
             txtNomPadre.Clear();
             txtDUI.Clear();
+            txtISSS.Clear();
+            txtNomRespon.Clear();
         }
         private void actualizar()
         {
@@ -159,6 +161,9 @@ namespace SICOVI
                 bebe.Nombre_paciente = txNomPaciente.Text;
                 bebe.Nombre_madre = txtNomMadre.Text;
                 bebe.Nombre_padre = txtNomPadre.Text;
+                bebe.Nombre_responsable = txtNomRespon.Text;
+                bebe.Num_dui_resposable = txtDUI.Text;
+                bebe.Num_seguro_responsable = txtISSS.Text;
                 lista.Add(bebe);
                 actualizar();
                 Limpiar();
