@@ -72,6 +72,7 @@
             this.materialFlatButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialFlatButton1.Depth = 0;
             this.materialFlatButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.materialFlatButton1.Enabled = false;
             this.materialFlatButton1.FlatAppearance.BorderSize = 0;
             this.materialFlatButton1.Location = new System.Drawing.Point(0, 0);
             this.materialFlatButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);

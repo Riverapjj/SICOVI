@@ -16,5 +16,11 @@ namespace SICOVI
         {
             InitializeComponent();
         }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            txtNombre.Clear();
+            this.Close();
+        }
     }
 }

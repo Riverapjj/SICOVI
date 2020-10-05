@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbVacunas = new System.Windows.Forms.ComboBox();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
@@ -54,20 +54,20 @@
             this.iconButton1.TabIndex = 11;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // txNombre
+            // txtNombre
             // 
-            this.txNombre.Depth = 0;
-            this.txNombre.Hint = "Nombre de paciente";
-            this.txNombre.Location = new System.Drawing.Point(181, 116);
-            this.txNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txNombre.Name = "txNombre";
-            this.txNombre.PasswordChar = '\0';
-            this.txNombre.SelectedText = "";
-            this.txNombre.SelectionLength = 0;
-            this.txNombre.SelectionStart = 0;
-            this.txNombre.Size = new System.Drawing.Size(213, 23);
-            this.txNombre.TabIndex = 10;
-            this.txNombre.UseSystemPasswordChar = false;
+            this.txtNombre.Depth = 0;
+            this.txtNombre.Hint = "Nombre de paciente";
+            this.txtNombre.Location = new System.Drawing.Point(181, 116);
+            this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.SelectionLength = 0;
+            this.txtNombre.SelectionStart = 0;
+            this.txtNombre.Size = new System.Drawing.Size(213, 23);
+            this.txtNombre.TabIndex = 10;
+            this.txtNombre.UseSystemPasswordChar = false;
             // 
             // label1
             // 
@@ -81,13 +81,13 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "VACUNAS";
             // 
-            // comboBox1
+            // cmbVacunas
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 180);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 21);
-            this.comboBox1.TabIndex = 24;
+            this.cmbVacunas.FormattingEnabled = true;
+            this.cmbVacunas.Location = new System.Drawing.Point(181, 180);
+            this.cmbVacunas.Name = "cmbVacunas";
+            this.cmbVacunas.Size = new System.Drawing.Size(213, 21);
+            this.cmbVacunas.TabIndex = 24;
             // 
             // iconButton2
             // 
@@ -149,21 +149,24 @@
             this.iconButton4.Text = "CANCELAR";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton4.UseVisualStyleBackColor = false;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // formPacienteVacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(564, 344);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbVacunas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.txNombre);
+            this.Controls.Add(this.txtNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPacienteVacuna";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formPacienteVacuna";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -173,9 +176,9 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButton1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txNombre;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbVacunas;
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
