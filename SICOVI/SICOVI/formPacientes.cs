@@ -96,13 +96,22 @@ namespace SICOVI
             if (txtEdad.Text == "")
             {
                 restrinciones4 = false;
-                errorProvider1.SetError(txtEdad, "INGRESE EDAD");
+                errorProvider1.SetError(txtEdad, "SOLO SE PERMiTEN NUMEROS");
             }
             return restrinciones4;
         }
-        
+        private bool restrinciones5()
+        {
+            bool restrinciones5 = true;
+            if (txtEdad.Text == "")
+            {
+                restrinciones5 = false;
+                errorProvider1.SetError(txtTel, "SOLO SE PERMiTEN NUMEROS");
+            }
+            return restrinciones5;
+        }
 
-    private void borrar()
+        private void borrar()
         {
             errorProvider1.SetError(txNombre, "");
             errorProvider1.SetError(txtNomPadre, "");
@@ -247,22 +256,26 @@ namespace SICOVI
 
         private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
         {
+            
+
             borrar();
             if (char.IsDigit(e.KeyChar))
             {
                 e.Handled = false;
             }
+            //para tecla backspace
             else if (char.IsControl(e.KeyChar))
             {
                 e.Handled = false;
             }
-            else if (txtEdad.Text.Contains("."))
-            {
-                e.Handled = false;
-            }
+
+
+
             else
             {
-                restrinciones4();
+                e.Handled = true;
+                restrinciones5();
+
             }
 
         }

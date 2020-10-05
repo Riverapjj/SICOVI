@@ -86,17 +86,8 @@ namespace SICOVI
 
             }
 
-           
-            
-          
+             }
                
-              
-                 
-                }
-            
-          
-           
-        
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
