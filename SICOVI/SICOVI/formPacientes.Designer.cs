@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.txNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -44,7 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPacientes
@@ -72,6 +75,7 @@
             this.txNombre.Size = new System.Drawing.Size(213, 23);
             this.txNombre.TabIndex = 7;
             this.txNombre.UseSystemPasswordChar = false;
+            this.txNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
             // 
             // iconButton1
             // 
@@ -121,6 +125,7 @@
             this.txtNomPadre.Size = new System.Drawing.Size(213, 23);
             this.txtNomPadre.TabIndex = 10;
             this.txtNomPadre.UseSystemPasswordChar = false;
+            this.txtNomPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomPadre_KeyPress);
             // 
             // txtNomMadre
             // 
@@ -136,6 +141,7 @@
             this.txtNomMadre.Size = new System.Drawing.Size(213, 23);
             this.txtNomMadre.TabIndex = 12;
             this.txtNomMadre.UseSystemPasswordChar = false;
+            this.txtNomMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomMadre_KeyPress);
             // 
             // iconButton3
             // 
@@ -185,6 +191,7 @@
             this.txtEdad.Size = new System.Drawing.Size(213, 23);
             this.txtEdad.TabIndex = 14;
             this.txtEdad.UseSystemPasswordChar = false;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // iconButton5
             // 
@@ -217,6 +224,7 @@
             this.txtTel.Size = new System.Drawing.Size(213, 23);
             this.txtTel.TabIndex = 16;
             this.txtTel.UseSystemPasswordChar = false;
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // btnAgregar
             // 
@@ -237,6 +245,7 @@
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -311,6 +320,10 @@
             this.iconButton6.UseVisualStyleBackColor = false;
             this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // formPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -336,6 +349,7 @@
             this.Name = "formPacientes";
             this.Text = "formPacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,5 +373,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton iconButton6;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

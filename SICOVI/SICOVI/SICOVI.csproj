@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas.cs" />
     <Compile Include="formLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +101,11 @@
     <Compile Include="formVacunas.Designer.cs">
       <DependentUpon>formVacunas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paciente.cs" />
+    <Compile Include="Personal Centro de Salud.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vacunas.cs" />
     <EmbeddedResource Include="formControles.resx">
       <DependentUpon>formControles.cs</DependentUpon>
     </EmbeddedResource>
