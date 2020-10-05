@@ -106,5 +106,11 @@ namespace SICOVI
         {
             Application.Exit();
         }
+
+        private void materialLabel1_Click(object sender, EventArgs e)
+        {
+            formCreditos formcreditos = new formCreditos();
+            formcreditos.Show();
+        }
     }
 }

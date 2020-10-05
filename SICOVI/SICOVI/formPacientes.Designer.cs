@@ -30,22 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.txNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txNomPaciente = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.txtNomPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtNomMadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
-            this.txtEdad = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtISSS = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.txtTel = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtDUI = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.iconButton7 = new FontAwesome.Sharp.IconButton();
+            this.txtNomRespon = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -61,21 +63,21 @@
             this.dgvPacientes.Size = new System.Drawing.Size(977, 264);
             this.dgvPacientes.TabIndex = 1;
             // 
-            // txNombre
+            // txNomPaciente
             // 
-            this.txNombre.Depth = 0;
-            this.txNombre.Hint = "Nombre de paciente";
-            this.txNombre.Location = new System.Drawing.Point(73, 94);
-            this.txNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txNombre.Name = "txNombre";
-            this.txNombre.PasswordChar = '\0';
-            this.txNombre.SelectedText = "";
-            this.txNombre.SelectionLength = 0;
-            this.txNombre.SelectionStart = 0;
-            this.txNombre.Size = new System.Drawing.Size(213, 23);
-            this.txNombre.TabIndex = 7;
-            this.txNombre.UseSystemPasswordChar = false;
-            this.txNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
+            this.txNomPaciente.Depth = 0;
+            this.txNomPaciente.Hint = "Nombre de paciente";
+            this.txNomPaciente.Location = new System.Drawing.Point(73, 94);
+            this.txNomPaciente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txNomPaciente.Name = "txNomPaciente";
+            this.txNomPaciente.PasswordChar = '\0';
+            this.txNomPaciente.SelectedText = "";
+            this.txNomPaciente.SelectionLength = 0;
+            this.txNomPaciente.SelectionStart = 0;
+            this.txNomPaciente.Size = new System.Drawing.Size(213, 23);
+            this.txNomPaciente.TabIndex = 7;
+            this.txNomPaciente.UseSystemPasswordChar = false;
+            this.txNomPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
             // 
             // iconButton1
             // 
@@ -166,32 +168,32 @@
             this.iconButton4.FlatAppearance.BorderSize = 0;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconSize = 25;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton4.Location = new System.Drawing.Point(384, 94);
+            this.iconButton4.Location = new System.Drawing.Point(381, 150);
             this.iconButton4.Name = "iconButton4";
             this.iconButton4.Rotation = 0D;
             this.iconButton4.Size = new System.Drawing.Size(32, 19);
             this.iconButton4.TabIndex = 15;
             this.iconButton4.UseVisualStyleBackColor = true;
             // 
-            // txtEdad
+            // txtISSS
             // 
-            this.txtEdad.Depth = 0;
-            this.txtEdad.Hint = "Edad";
-            this.txtEdad.Location = new System.Drawing.Point(434, 94);
-            this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.PasswordChar = '\0';
-            this.txtEdad.SelectedText = "";
-            this.txtEdad.SelectionLength = 0;
-            this.txtEdad.SelectionStart = 0;
-            this.txtEdad.Size = new System.Drawing.Size(213, 23);
-            this.txtEdad.TabIndex = 14;
-            this.txtEdad.UseSystemPasswordChar = false;
-            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
+            this.txtISSS.Depth = 0;
+            this.txtISSS.Hint = "N° ISSS del responsable";
+            this.txtISSS.Location = new System.Drawing.Point(431, 150);
+            this.txtISSS.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtISSS.Name = "txtISSS";
+            this.txtISSS.PasswordChar = '\0';
+            this.txtISSS.SelectedText = "";
+            this.txtISSS.SelectionLength = 0;
+            this.txtISSS.SelectionStart = 0;
+            this.txtISSS.Size = new System.Drawing.Size(213, 23);
+            this.txtISSS.TabIndex = 14;
+            this.txtISSS.UseSystemPasswordChar = false;
+            this.txtISSS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // iconButton5
             // 
@@ -199,32 +201,32 @@
             this.iconButton5.FlatAppearance.BorderSize = 0;
             this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.PhoneSquareAlt;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.IdCard;
             this.iconButton5.IconColor = System.Drawing.Color.Black;
             this.iconButton5.IconSize = 25;
             this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(384, 150);
+            this.iconButton5.Location = new System.Drawing.Point(381, 206);
             this.iconButton5.Name = "iconButton5";
             this.iconButton5.Rotation = 0D;
             this.iconButton5.Size = new System.Drawing.Size(32, 19);
             this.iconButton5.TabIndex = 17;
             this.iconButton5.UseVisualStyleBackColor = true;
             // 
-            // txtTel
+            // txtDUI
             // 
-            this.txtTel.Depth = 0;
-            this.txtTel.Hint = "Teléfono";
-            this.txtTel.Location = new System.Drawing.Point(434, 150);
-            this.txtTel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtTel.Name = "txtTel";
-            this.txtTel.PasswordChar = '\0';
-            this.txtTel.SelectedText = "";
-            this.txtTel.SelectionLength = 0;
-            this.txtTel.SelectionStart = 0;
-            this.txtTel.Size = new System.Drawing.Size(213, 23);
-            this.txtTel.TabIndex = 16;
-            this.txtTel.UseSystemPasswordChar = false;
-            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
+            this.txtDUI.Depth = 0;
+            this.txtDUI.Hint = "DUI del responsable";
+            this.txtDUI.Location = new System.Drawing.Point(431, 206);
+            this.txtDUI.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtDUI.Name = "txtDUI";
+            this.txtDUI.PasswordChar = '\0';
+            this.txtDUI.SelectedText = "";
+            this.txtDUI.SelectionLength = 0;
+            this.txtDUI.SelectionStart = 0;
+            this.txtDUI.Size = new System.Drawing.Size(213, 23);
+            this.txtDUI.TabIndex = 16;
+            this.txtDUI.UseSystemPasswordChar = false;
+            this.txtDUI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // btnAgregar
             // 
@@ -324,26 +326,61 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // iconButton7
+            // 
+            this.iconButton7.Enabled = false;
+            this.iconButton7.FlatAppearance.BorderSize = 0;
+            this.iconButton7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton7.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton7.IconChar = FontAwesome.Sharp.IconChar.Male;
+            this.iconButton7.IconColor = System.Drawing.Color.Black;
+            this.iconButton7.IconSize = 25;
+            this.iconButton7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton7.Location = new System.Drawing.Point(383, 90);
+            this.iconButton7.Name = "iconButton7";
+            this.iconButton7.Rotation = 0D;
+            this.iconButton7.Size = new System.Drawing.Size(44, 19);
+            this.iconButton7.TabIndex = 25;
+            this.iconButton7.UseVisualStyleBackColor = true;
+            // 
+            // txtNomRespon
+            // 
+            this.txtNomRespon.Depth = 0;
+            this.txtNomRespon.Hint = "Nombre del responsable";
+            this.txtNomRespon.Location = new System.Drawing.Point(431, 90);
+            this.txtNomRespon.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNomRespon.Name = "txtNomRespon";
+            this.txtNomRespon.PasswordChar = '\0';
+            this.txtNomRespon.SelectedText = "";
+            this.txtNomRespon.SelectionLength = 0;
+            this.txtNomRespon.SelectionStart = 0;
+            this.txtNomRespon.Size = new System.Drawing.Size(213, 23);
+            this.txtNomRespon.TabIndex = 24;
+            this.txtNomRespon.UseSystemPasswordChar = false;
+            this.txtNomRespon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomRespon_KeyPress);
+            // 
             // formPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 556);
+            this.Controls.Add(this.iconButton7);
+            this.Controls.Add(this.txtNomRespon);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.iconButton5);
-            this.Controls.Add(this.txtTel);
+            this.Controls.Add(this.txtDUI);
             this.Controls.Add(this.iconButton4);
-            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.txtISSS);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.txtNomMadre);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.txtNomPadre);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.txNombre);
+            this.Controls.Add(this.txNomPaciente);
             this.Controls.Add(this.dgvPacientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPacientes";
@@ -358,21 +395,23 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txNombre;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txNomPaciente;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNomPadre;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNomMadre;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtEdad;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtISSS;
         private FontAwesome.Sharp.IconButton iconButton5;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtTel;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtDUI;
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnModificar;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton iconButton6;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private FontAwesome.Sharp.IconButton iconButton7;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNomRespon;
     }
 }
