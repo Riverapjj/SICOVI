@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formLogin.Designer.cs">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="formPacientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,12 @@
     <Compile Include="formControles.Designer.cs">
       <DependentUpon>formControles.cs</DependentUpon>
     </Compile>
+    <Compile Include="formSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formSplash.Designer.cs">
+      <DependentUpon>formSplash.cs</DependentUpon>
+    </Compile>
     <Compile Include="formUsuariosBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +105,9 @@
     <EmbeddedResource Include="formControles.resx">
       <DependentUpon>formControles.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="formLogin.resx">
+      <DependentUpon>formLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formPacientes.resx">
       <DependentUpon>formPacientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formSplash.resx">
+      <DependentUpon>formSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formUsuariosBase.resx">
       <DependentUpon>formUsuariosBase.cs</DependentUpon>
