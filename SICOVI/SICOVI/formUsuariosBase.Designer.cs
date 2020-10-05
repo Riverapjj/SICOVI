@@ -55,7 +55,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(29, 66);
+            this.iconButton1.Location = new System.Drawing.Point(26, 82);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(44, 19);
@@ -66,7 +66,7 @@
             // 
             this.txNombre.Depth = 0;
             this.txNombre.Hint = "Nombre de paciente";
-            this.txNombre.Location = new System.Drawing.Point(79, 66);
+            this.txNombre.Location = new System.Drawing.Point(76, 82);
             this.txNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txNombre.Name = "txNombre";
             this.txNombre.PasswordChar = '\0';
