@@ -17,7 +17,7 @@ namespace SICOVI
         {
             Thread thread = new Thread(ejecutarSplash);
             thread.Start();
-            Thread.Sleep(10000);
+            Thread.Sleep(4000);
             InitializeComponent();
             thread.Abort();
         }

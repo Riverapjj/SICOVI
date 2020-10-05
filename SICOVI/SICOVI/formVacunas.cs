@@ -52,7 +52,7 @@ namespace SICOVI
             }
             if (txtDescripcion.Text == "")
             {
-                errorProvider1.SetError(txNombre, "NO SE PERMITEN ESPACIOS VACIOS");
+                errorProvider1.SetError(txtDescripcion, "NO SE PERMITEN ESPACIOS VACIOS");
             }
             return validar;
 

@@ -48,12 +48,12 @@ namespace SICOVI
             if (txtNomMadre.Text == "")
             {
                 vacio = false;
-                errorProvider1.SetError(txNomPaciente, "no se permite espacios vacios");
+                errorProvider1.SetError(txtNomMadre, "no se permite espacios vacios");
             }
             if (txtNomRespon.Text == "")
             {
                 vacio = false;
-                errorProvider1.SetError(txNomPaciente, "no se permite espacios vacios");
+                errorProvider1.SetError(txtNomRespon, "no se permite espacios vacios");
             }
             if (txtISSS.Text == "")
             {
@@ -164,6 +164,7 @@ namespace SICOVI
                 bebe.Nombre_responsable = txtNomRespon.Text;
                 bebe.Num_dui_resposable = txtDUI.Text;
                 bebe.Num_seguro_responsable = txtISSS.Text;
+                bebe.Fecha_nacimiento = dtpFechaNac.Value;
                 lista.Add(bebe);
                 actualizar();
                 Limpiar();

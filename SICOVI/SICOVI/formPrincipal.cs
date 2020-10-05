@@ -112,5 +112,10 @@ namespace SICOVI
             formCreditos formcreditos = new formCreditos();
             formcreditos.Show();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

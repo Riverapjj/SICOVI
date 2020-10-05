@@ -30,17 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCreditos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialFlatButton1 = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.materialFlatButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -48,6 +49,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(468, 28);
             this.panel1.TabIndex = 0;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.materialRaisedButton1.FlatAppearance.BorderSize = 0;
+            this.materialRaisedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(416, 0);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(52, 28);
+            this.materialRaisedButton1.TabIndex = 1;
+            this.materialRaisedButton1.Text = "X";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // materialFlatButton1
             // 
@@ -66,22 +83,6 @@
             this.materialFlatButton1.Text = "Créditos";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
             // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.materialRaisedButton1.FlatAppearance.BorderSize = 0;
-            this.materialRaisedButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(416, 0);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(52, 28);
-            this.materialRaisedButton1.TabIndex = 1;
-            this.materialRaisedButton1.Text = "X";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.iconButton2);
@@ -92,28 +93,9 @@
             this.panel2.Size = new System.Drawing.Size(468, 275);
             this.panel2.TabIndex = 1;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.iconButton1.Enabled = false;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Copyright;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton1.Location = new System.Drawing.Point(0, 253);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(468, 22);
-            this.iconButton1.TabIndex = 10;
-            this.iconButton1.Text = "Derechos Reservados - UDB";
-            this.iconButton1.UseVisualStyleBackColor = true;
-            // 
             // iconButton2
             // 
+            this.iconButton2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconButton2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.iconButton2.Enabled = false;
             this.iconButton2.FlatAppearance.BorderSize = 0;
@@ -130,7 +112,28 @@
             this.iconButton2.Size = new System.Drawing.Size(468, 253);
             this.iconButton2.TabIndex = 11;
             this.iconButton2.Text = resources.GetString("iconButton2.Text");
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.UseVisualStyleBackColor = false;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.iconButton1.Enabled = false;
+            this.iconButton1.FlatAppearance.BorderSize = 0;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Copyright;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton1.Location = new System.Drawing.Point(0, 253);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(468, 22);
+            this.iconButton1.TabIndex = 10;
+            this.iconButton1.Text = "Derechos Reservados - UDB";
+            this.iconButton1.UseVisualStyleBackColor = false;
             // 
             // formCreditos
             // 

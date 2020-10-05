@@ -12,7 +12,7 @@ namespace SICOVI
         DateTime fecha_nacimiento;
         string nombre_madre;
         string nombre_padre;
-        bool nombre_responsable;
+        string nombre_responsable;
         string num_dui_resposable;
         string num_seguro_responsable;
 

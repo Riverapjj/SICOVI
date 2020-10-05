@@ -123,6 +123,7 @@
     <Compile Include="Personal Centro de Salud.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Usuarios.cs" />
     <Compile Include="Vacunas.cs" />
     <EmbeddedResource Include="formAdmin.resx">
       <DependentUpon>formAdmin.cs</DependentUpon>

@@ -48,6 +48,8 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.iconButton7 = new FontAwesome.Sharp.IconButton();
             this.txtNomRespon = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
+            this.iconButton8 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -359,11 +361,37 @@
             this.txtNomRespon.UseSystemPasswordChar = false;
             this.txtNomRespon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomRespon_KeyPress);
             // 
+            // dtpFechaNac
+            // 
+            this.dtpFechaNac.Location = new System.Drawing.Point(790, 87);
+            this.dtpFechaNac.Name = "dtpFechaNac";
+            this.dtpFechaNac.Size = new System.Drawing.Size(213, 20);
+            this.dtpFechaNac.TabIndex = 26;
+            // 
+            // iconButton8
+            // 
+            this.iconButton8.Enabled = false;
+            this.iconButton8.FlatAppearance.BorderSize = 0;
+            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            this.iconButton8.IconColor = System.Drawing.Color.Black;
+            this.iconButton8.IconSize = 25;
+            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton8.Location = new System.Drawing.Point(740, 87);
+            this.iconButton8.Name = "iconButton8";
+            this.iconButton8.Rotation = 0D;
+            this.iconButton8.Size = new System.Drawing.Size(44, 19);
+            this.iconButton8.TabIndex = 27;
+            this.iconButton8.UseVisualStyleBackColor = true;
+            // 
             // formPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 556);
+            this.Controls.Add(this.iconButton8);
+            this.Controls.Add(this.dtpFechaNac);
             this.Controls.Add(this.iconButton7);
             this.Controls.Add(this.txtNomRespon);
             this.Controls.Add(this.iconButton6);
@@ -413,5 +441,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private FontAwesome.Sharp.IconButton iconButton7;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNomRespon;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private System.Windows.Forms.DateTimePicker dtpFechaNac;
     }
 }
