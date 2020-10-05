@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
             this.txNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -44,12 +45,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.iconButton6 = new FontAwesome.Sharp.IconButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtDUI = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.txtISSS = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.iconButton8 = new FontAwesome.Sharp.IconButton();
-            this.iconButton9 = new FontAwesome.Sharp.IconButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvPacientes
@@ -77,6 +75,7 @@
             this.txNombre.Size = new System.Drawing.Size(213, 23);
             this.txNombre.TabIndex = 7;
             this.txNombre.UseSystemPasswordChar = false;
+            this.txNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
             // 
             // iconButton1
             // 
@@ -126,6 +125,7 @@
             this.txtNomPadre.Size = new System.Drawing.Size(213, 23);
             this.txtNomPadre.TabIndex = 10;
             this.txtNomPadre.UseSystemPasswordChar = false;
+            this.txtNomPadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomPadre_KeyPress);
             // 
             // txtNomMadre
             // 
@@ -141,6 +141,7 @@
             this.txtNomMadre.Size = new System.Drawing.Size(213, 23);
             this.txtNomMadre.TabIndex = 12;
             this.txtNomMadre.UseSystemPasswordChar = false;
+            this.txtNomMadre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNomMadre_KeyPress);
             // 
             // iconButton3
             // 
@@ -165,7 +166,7 @@
             this.iconButton4.FlatAppearance.BorderSize = 0;
             this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton4.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek;
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.IdCardAlt;
             this.iconButton4.IconColor = System.Drawing.Color.Black;
             this.iconButton4.IconSize = 25;
             this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -180,7 +181,7 @@
             // 
             this.txtEdad.Depth = 0;
             this.txtEdad.Hint = "Edad";
-            this.txtEdad.Location = new System.Drawing.Point(73, 34);
+            this.txtEdad.Location = new System.Drawing.Point(434, 94);
             this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.PasswordChar = '\0';
@@ -190,6 +191,7 @@
             this.txtEdad.Size = new System.Drawing.Size(213, 23);
             this.txtEdad.TabIndex = 14;
             this.txtEdad.UseSystemPasswordChar = false;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // iconButton5
             // 
@@ -222,6 +224,7 @@
             this.txtTel.Size = new System.Drawing.Size(213, 23);
             this.txtTel.TabIndex = 16;
             this.txtTel.UseSystemPasswordChar = false;
+            this.txtTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTel_KeyPress);
             // 
             // btnAgregar
             // 
@@ -242,6 +245,7 @@
             this.btnAgregar.TabIndex = 18;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnModificar
             // 
@@ -316,87 +320,15 @@
             this.iconButton6.UseVisualStyleBackColor = false;
             this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
             // 
-            // dateTimePicker1
+            // errorProvider1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(434, 97);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 20);
-            this.dateTimePicker1.TabIndex = 24;
-            // 
-            // txtDUI
-            // 
-            this.txtDUI.Depth = 0;
-            this.txtDUI.Hint = "DUI del responsable";
-            this.txtDUI.Location = new System.Drawing.Point(434, 207);
-            this.txtDUI.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtDUI.Name = "txtDUI";
-            this.txtDUI.PasswordChar = '\0';
-            this.txtDUI.SelectedText = "";
-            this.txtDUI.SelectionLength = 0;
-            this.txtDUI.SelectionStart = 0;
-            this.txtDUI.Size = new System.Drawing.Size(213, 23);
-            this.txtDUI.TabIndex = 25;
-            this.txtDUI.UseSystemPasswordChar = false;
-            // 
-            // txtISSS
-            // 
-            this.txtISSS.Depth = 0;
-            this.txtISSS.Hint = "N° ISSS del resposanble";
-            this.txtISSS.Location = new System.Drawing.Point(790, 90);
-            this.txtISSS.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtISSS.Name = "txtISSS";
-            this.txtISSS.PasswordChar = '\0';
-            this.txtISSS.SelectedText = "";
-            this.txtISSS.SelectionLength = 0;
-            this.txtISSS.SelectionStart = 0;
-            this.txtISSS.Size = new System.Drawing.Size(213, 23);
-            this.txtISSS.TabIndex = 26;
-            this.txtISSS.UseSystemPasswordChar = false;
-            // 
-            // iconButton8
-            // 
-            this.iconButton8.Enabled = false;
-            this.iconButton8.FlatAppearance.BorderSize = 0;
-            this.iconButton8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton8.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton8.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
-            this.iconButton8.IconColor = System.Drawing.Color.Black;
-            this.iconButton8.IconSize = 25;
-            this.iconButton8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton8.Location = new System.Drawing.Point(384, 207);
-            this.iconButton8.Name = "iconButton8";
-            this.iconButton8.Rotation = 0D;
-            this.iconButton8.Size = new System.Drawing.Size(32, 19);
-            this.iconButton8.TabIndex = 27;
-            this.iconButton8.UseVisualStyleBackColor = true;
-            // 
-            // iconButton9
-            // 
-            this.iconButton9.Enabled = false;
-            this.iconButton9.FlatAppearance.BorderSize = 0;
-            this.iconButton9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton9.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton9.IconChar = FontAwesome.Sharp.IconChar.IdCard;
-            this.iconButton9.IconColor = System.Drawing.Color.Black;
-            this.iconButton9.IconSize = 25;
-            this.iconButton9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton9.Location = new System.Drawing.Point(743, 90);
-            this.iconButton9.Name = "iconButton9";
-            this.iconButton9.Rotation = 0D;
-            this.iconButton9.Size = new System.Drawing.Size(32, 19);
-            this.iconButton9.TabIndex = 28;
-            this.iconButton9.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
             // 
             // formPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 556);
-            this.Controls.Add(this.iconButton9);
-            this.Controls.Add(this.iconButton8);
-            this.Controls.Add(this.txtISSS);
-            this.Controls.Add(this.txtDUI);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.iconButton6);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label1);
@@ -417,6 +349,7 @@
             this.Name = "formPacientes";
             this.Text = "formPacientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPacientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,10 +373,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton iconButton6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtDUI;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtISSS;
-        private FontAwesome.Sharp.IconButton iconButton8;
-        private FontAwesome.Sharp.IconButton iconButton9;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
