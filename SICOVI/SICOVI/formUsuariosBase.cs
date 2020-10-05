@@ -16,5 +16,10 @@ namespace SICOVI
         {
             InitializeComponent();
         }
+
+        private void formUsuariosBase_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

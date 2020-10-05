@@ -98,5 +98,10 @@ namespace SICOVI
         {
             abrirFormHijo(new formVacunas());
         }
+
+        private void formPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
