@@ -88,12 +88,6 @@
     <Compile Include="formSplash.Designer.cs">
       <DependentUpon>formSplash.cs</DependentUpon>
     </Compile>
-    <Compile Include="formUsuariosBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formUsuariosBase.Designer.cs">
-      <DependentUpon>formUsuariosBase.cs</DependentUpon>
-    </Compile>
     <Compile Include="formVacunas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,9 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formSplash.resx">
       <DependentUpon>formSplash.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formUsuariosBase.resx">
-      <DependentUpon>formUsuariosBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formVacunas.resx">
       <DependentUpon>formVacunas.cs</DependentUpon>
