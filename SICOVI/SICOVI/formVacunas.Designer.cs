@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvVacunas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -37,7 +38,9 @@
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvVacunas
@@ -126,6 +129,7 @@
             this.txtEdad.Size = new System.Drawing.Size(213, 23);
             this.txtEdad.TabIndex = 25;
             this.txtEdad.UseSystemPasswordChar = false;
+            this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
             // btnLimpiar
             // 
@@ -186,6 +190,11 @@
             this.btnAgregar.TabIndex = 27;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // formVacunas
             // 
@@ -205,6 +214,7 @@
             this.Name = "formVacunas";
             this.Text = "formVacunas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -221,5 +231,6 @@
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnAgregar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
