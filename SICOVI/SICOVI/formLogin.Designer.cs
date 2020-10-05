@@ -151,7 +151,7 @@
             // 
             this.materialRaisedButton1.BackColor = System.Drawing.Color.CadetBlue;
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(103, 273);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(103, 280);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
