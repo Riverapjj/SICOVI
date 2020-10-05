@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SICOVI
 {
-    public partial class formUsuariosBase : Form
+    public partial class formRecepcionistas : Form
     {
-        public formUsuariosBase()
+        public formRecepcionistas()
         {
             InitializeComponent();
         }
