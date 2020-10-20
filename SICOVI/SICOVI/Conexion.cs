@@ -9,27 +9,13 @@ namespace SICOVI
 {
     public class Conexion
     {
-        public void abrirConexion()
+        public string servidor, cadena;
+
+        public void conectar()
         {
-            string connString = devolverString();
+            servidor = "LAPTOP\\LAPTOP";
 
-            using (SqlConnection connection = new SqlConnection())
-            {
-                connection.ConnectionString = connString;
-
-                connection.Open();
-
-                Console.WriteLine("State: {0}", connection.State);
-                Console.WriteLine("ConnectionString: {0}",
-                    connection.ConnectionString);
-            }
-        }
-
-        static private string devolverString()
-        {
-            // To avoid storing the connection string in your code,
-            // you can retrieve it from a configuration file.
-            return "Data Source=LAPTOP\\LAPTOP;Initial Catalog=SICOVI;"
+            cadena = "Data Source=" + servidor +";Initial Catalog=SICOVI;"
                 + "Integrated Security=true;";
         }
     }

@@ -32,7 +32,7 @@
             this.dgvVacunas = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.txNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.txtEdad = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
@@ -85,20 +85,20 @@
             this.iconButton1.TabIndex = 24;
             this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // txNombre
+            // txtNombre
             // 
-            this.txNombre.Depth = 0;
-            this.txNombre.Hint = "Nombre de vacuna";
-            this.txNombre.Location = new System.Drawing.Point(78, 95);
-            this.txNombre.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txNombre.Name = "txNombre";
-            this.txNombre.PasswordChar = '\0';
-            this.txNombre.SelectedText = "";
-            this.txNombre.SelectionLength = 0;
-            this.txNombre.SelectionStart = 0;
-            this.txNombre.Size = new System.Drawing.Size(213, 23);
-            this.txNombre.TabIndex = 23;
-            this.txNombre.UseSystemPasswordChar = false;
+            this.txtNombre.Depth = 0;
+            this.txtNombre.Hint = "Nombre de vacuna";
+            this.txtNombre.Location = new System.Drawing.Point(78, 95);
+            this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.PasswordChar = '\0';
+            this.txtNombre.SelectedText = "";
+            this.txtNombre.SelectionLength = 0;
+            this.txtNombre.SelectionStart = 0;
+            this.txtNombre.Size = new System.Drawing.Size(213, 23);
+            this.txtNombre.TabIndex = 23;
+            this.txtNombre.UseSystemPasswordChar = false;
             // 
             // iconButton4
             // 
@@ -172,6 +172,7 @@
             this.btnModificar.TabIndex = 28;
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -243,7 +244,7 @@
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.txNombre);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvVacunas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -261,7 +262,7 @@
         private System.Windows.Forms.DataGridView dgvVacunas;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txNombre;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private FontAwesome.Sharp.IconButton iconButton4;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEdad;
         private FontAwesome.Sharp.IconButton btnLimpiar;

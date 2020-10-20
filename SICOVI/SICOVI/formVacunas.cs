@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,20 +13,44 @@ namespace SICOVI
 {
     public partial class formVacunas : Form
     {
-        private List<Vacunas> lista = new List<Vacunas>();
-   
+        private SqlConnection conn;
+        private SqlCommand cmd;
+        private string stringCon;
+        private SqlDataAdapter dataAdapter;
+        private SqlCommandBuilder cmdBuilder;
+
+
         public formVacunas()
         {
             InitializeComponent();
+            
+            Conexion conexion = new Conexion();
+            conexion.conectar();
+            stringCon = conexion.cadena;
+
+            conn = new SqlConnection(stringCon);
+            actualizar();
         }
         private void actualizar()
         {
-            dgvVacunas.DataSource = null;
-            dgvVacunas.DataSource = lista;
+            try
+            {
+                DataSet dataSet = new DataSet();
+                string select = "SELECT Nombre, Descripcion, Edad_Aplicacion AS [Edad de aplicación] FROM Vacunas";
+                dataAdapter = new SqlDataAdapter(select, conn);
+                cmdBuilder = new SqlCommandBuilder(dataAdapter);
+                dataAdapter.Fill(dataSet);
+
+                dgvVacunas.DataSource = dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void limpiar()
         {
-            txNombre.Clear();
+            txtNombre.Clear();
             txtEdad.Clear();
             txtDescripcion.Clear();
         }
@@ -34,7 +59,7 @@ namespace SICOVI
         private void borrar()
         {
             errorProvider1.SetError(txtEdad, "");
-            errorProvider1.SetError(txNombre, "");
+            errorProvider1.SetError(txtNombre, "");
             errorProvider1.SetError(txtDescripcion, "");
         }
 
@@ -46,9 +71,9 @@ namespace SICOVI
                 validar = false;
                 errorProvider1.SetError(txtEdad, "NO SE PERMITEN ESPSCIOS VACIOS");
             }
-            if(txNombre.Text == "")
+            if(txtNombre.Text == "")
             {
-                errorProvider1.SetError(txNombre, "NO SE PERMITEN ESPACIOS VACIOS");
+                errorProvider1.SetError(txtNombre, "NO SE PERMITEN ESPACIOS VACIOS");
             }
             if (txtDescripcion.Text == "")
             {
@@ -78,21 +103,37 @@ namespace SICOVI
             
             int edad = int.Parse(txtEdad.Text);
            
-             if(edad > 100)
+                if(edad > 100)
                 {
                     MessageBox.Show("EDAD NO EXISTE");
                     limpiar();
                 }
-            else
-            {
-                control.Nombre_vacuna = txNombre.Text;
-                control.Edad_aplicacion = edad;
-                control.Descripción_vacuna = txtDescripcion.Text;
-                lista.Add(control);
-                actualizar();
+                else
+                {
+                    try
+                    {
+                        SqlCommand cmd = new SqlCommand("Insertar_Vacuna", conn);
+
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
+                        cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
+                        cmd.Parameters.Add("@Edad_Aplicacion", SqlDbType.Char).Value = txtEdad.Text;
+
+                        conn.Open();
+                        cmd.ExecuteNonQuery();
+                        conn.Close();
+
+                        MessageBox.Show("Datos ingresados correctamente.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    actualizar();
                     limpiar();
 
-            }
+                }
 
              }
                
@@ -118,6 +159,11 @@ namespace SICOVI
                 validar2();
                
             }
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
 
         }
     }
