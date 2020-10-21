@@ -53,8 +53,10 @@
             this.dgvVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVacunas.Location = new System.Drawing.Point(27, 231);
             this.dgvVacunas.Name = "dgvVacunas";
+            this.dgvVacunas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVacunas.Size = new System.Drawing.Size(959, 264);
             this.dgvVacunas.TabIndex = 2;
+            this.dgvVacunas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVacunas_CellClick);
             // 
             // label1
             // 

@@ -18,7 +18,7 @@ namespace SICOVI
         private string stringCon;
         private SqlDataAdapter dataAdapter;
         private SqlCommandBuilder cmdBuilder;
-
+        private int id;
 
         public formVacunas()
         {
@@ -95,7 +95,6 @@ namespace SICOVI
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Vacunas control = new Vacunas();
             borrar();
             if (validar())
             {
@@ -112,7 +111,7 @@ namespace SICOVI
                 {
                     try
                     {
-                        SqlCommand cmd = new SqlCommand("Insertar_Vacuna", conn);
+                        cmd = new SqlCommand("Insertar_Vacuna", conn);
 
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
@@ -164,6 +163,51 @@ namespace SICOVI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            borrar();
+            if (validar())
+            {
+                try
+                {
+                    cmd = new SqlCommand("Actualizar_Vacuna", conn);
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("@ID_Vacuna", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
+                    cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
+                    cmd.Parameters.Add("@Edad_Aplicacion", SqlDbType.Char).Value = txtEdad.Text;
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    MessageBox.Show("Datos actualizados correctamente.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvVacunas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string select = "SELECT ID_Vacuna FROM VACUNAS WHERE Nombre = @Nombre AND Descripcion = @Descripcion AND Edad_Aplicacion = @Edad";
+            string select2 = "SELECT Nombre, Descripcion, Edad_Aplicacion FROM Vacunas WHERE ID_Vacuna = @ID_Vacuna";
+            cmd = new SqlCommand(select, conn);
+
+            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
+            cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
+            cmd.Parameters.Add("@Edad", SqlDbType.Char).Value = txtEdad.Text;
+            conn.Open();
+            id = Convert.ToInt32(cmd.ExecuteScalar());
+            conn.Close();
+
+            cmd = new SqlCommand(select2, conn);
+            cmd.Parameters.Add("@ID_Vacuna", SqlDbType.Int).Value = id;
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
 
         }
     }
