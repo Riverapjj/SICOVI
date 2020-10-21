@@ -17,7 +17,6 @@ namespace SICOVI
             InitializeComponent();
         }
 
-        List<Usuarios> lista = new List<Usuarios>();
 
         public void Limpiar()
         {
@@ -32,8 +31,6 @@ namespace SICOVI
 
         private void actualizar()
         {
-            dgvRecepcionistas.DataSource = null;
-            dgvRecepcionistas.DataSource = lista;
         }
 
         private bool vacio()
@@ -170,18 +167,9 @@ namespace SICOVI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             borrar();
-            Usuarios usuarios = new Usuarios();
 
             if (vacio())
             {
-                usuarios.Nombre = txtNombre.Text;
-                usuarios.Usuario = txtUsuario.Text;
-                usuarios.Contra = txtContra.Text;
-                usuarios.Rango = txtRango.Text;
-                usuarios.Dui = txtDUI.Text;
-                usuarios.Telefono = txtTelefono.Text;
-                usuarios.Email = txtEmail.Text;
-                lista.Add(usuarios);
                 actualizar();
                 Limpiar();
             }

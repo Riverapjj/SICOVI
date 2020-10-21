@@ -8,40 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SICOVI.Modelos;
+using SICOVI.Data;
 
 namespace SICOVI
 {
     public partial class formVacunas : Form
     {
-        private SqlConnection conn;
-        private SqlCommand cmd;
-        private string stringCon;
-        private SqlDataAdapter dataAdapter;
-        private SqlCommandBuilder cmdBuilder;
-        private int id;
+        VacunasD vacunasD;
+        Vacunas vacunas;
+        List<Vacunas> listaVacunas;
 
         public formVacunas()
         {
             InitializeComponent();
-            
-            Conexion conexion = new Conexion();
-            conexion.conectar();
-            stringCon = conexion.cadena;
-
-            conn = new SqlConnection(stringCon);
             actualizar();
         }
         private void actualizar()
         {
             try
             {
-                DataSet dataSet = new DataSet();
-                string select = "SELECT Nombre, Descripcion, Edad_Aplicacion AS [Edad de aplicación] FROM Vacunas";
-                dataAdapter = new SqlDataAdapter(select, conn);
-                cmdBuilder = new SqlCommandBuilder(dataAdapter);
-                dataAdapter.Fill(dataSet);
-
-                dgvVacunas.DataSource = dataSet.Tables[0];
+                
+                //dgvVacunas.DataSource = dataSet.Tables[0];
             }
             catch (Exception ex)
             {
@@ -111,17 +99,14 @@ namespace SICOVI
                 {
                     try
                     {
-                        cmd = new SqlCommand("Insertar_Vacuna", conn);
+                        vacunas = new Vacunas();
+                        vacunasD = new VacunasD();
 
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
-                        cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
-                        cmd.Parameters.Add("@Edad_Aplicacion", SqlDbType.Char).Value = txtEdad.Text;
+                        vacunas.Nombre_vacuna = txtNombre.Text;
+                        vacunas.Descripción_vacuna = txtDescripcion.Text;
+                        vacunas.Edad_aplicacion = edad;
 
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                        conn.Close();
-
+                        vacunasD.insertarVacuna(vacunas);
                         MessageBox.Show("Datos ingresados correctamente.");
                     }
                     catch (Exception ex)
@@ -168,19 +153,7 @@ namespace SICOVI
             {
                 try
                 {
-                    cmd = new SqlCommand("Actualizar_Vacuna", conn);
-
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    cmd.Parameters.Add("@ID_Vacuna", SqlDbType.Int).Value = id;
-                    cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
-                    cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
-                    cmd.Parameters.Add("@Edad_Aplicacion", SqlDbType.Char).Value = txtEdad.Text;
-
-                    conn.Open();
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-
+                    
                     MessageBox.Show("Datos actualizados correctamente.");
                 }
                 catch (Exception ex)
@@ -192,22 +165,7 @@ namespace SICOVI
 
         private void dgvVacunas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string select = "SELECT ID_Vacuna FROM VACUNAS WHERE Nombre = @Nombre AND Descripcion = @Descripcion AND Edad_Aplicacion = @Edad";
-            string select2 = "SELECT Nombre, Descripcion, Edad_Aplicacion FROM Vacunas WHERE ID_Vacuna = @ID_Vacuna";
-            cmd = new SqlCommand(select, conn);
-
-            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = txtNombre.Text;
-            cmd.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = txtDescripcion.Text;
-            cmd.Parameters.Add("@Edad", SqlDbType.Char).Value = txtEdad.Text;
-            conn.Open();
-            id = Convert.ToInt32(cmd.ExecuteScalar());
-            conn.Close();
-
-            cmd = new SqlCommand(select2, conn);
-            cmd.Parameters.Add("@ID_Vacuna", SqlDbType.Int).Value = id;
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            
 
         }
     }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SICOVI
+namespace SICOVI.Modelos
 {
-    class Personal_Centro_de_Salud
+    public class Personal_Centro_de_Salud
     {
         string nombre_personal;
         string nombre;

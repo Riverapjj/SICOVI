@@ -12,7 +12,6 @@ namespace SICOVI
 {
     public partial class formPacientes : Form
     {
-        private List<Paciente> lista = new List<Paciente>();
         public formPacientes()
         {
             InitializeComponent();
@@ -29,8 +28,6 @@ namespace SICOVI
         }
         private void actualizar()
         {
-            dgvPacientes.DataSource = null;
-            dgvPacientes.DataSource = lista;
         }
         private bool vacio()
         {
@@ -154,18 +151,8 @@ namespace SICOVI
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             borrar();
-            Paciente bebe = new Paciente();
-
             if (vacio())
             {
-                bebe.Nombre_paciente = txNomPaciente.Text;
-                bebe.Nombre_madre = txtNomMadre.Text;
-                bebe.Nombre_padre = txtNomPadre.Text;
-                bebe.Nombre_responsable = txtNomRespon.Text;
-                bebe.Num_dui_resposable = txtDUI.Text;
-                bebe.Num_seguro_responsable = txtISSS.Text;
-                bebe.Fecha_nacimiento = dtpFechaNac.Value;
-                lista.Add(bebe);
                 actualizar();
                 Limpiar();
             }

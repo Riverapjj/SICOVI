@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SICOVI
+namespace SICOVI.Modelos
 {
-    class Usuarios
+    public class Usuarios
     {
         string nombre;
         string usuario;

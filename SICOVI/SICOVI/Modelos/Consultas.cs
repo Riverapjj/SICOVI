@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SICOVI
+namespace SICOVI.Modelos
 {
-    class Consultas
+    public class Consultas
     {
         string id_consultas;
         string id_vacuna;

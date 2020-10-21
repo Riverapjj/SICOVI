@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SICOVI
+namespace SICOVI.Modelos
 {
-    class Paciente
+    public class Paciente
     {
         string nombre_paciente;
         DateTime fecha_nacimiento;
