@@ -17,6 +17,8 @@ namespace SICOVI
     {
         VacunasD vacunasD;
         Vacunas vacunas;
+        string nombreVac;
+        int id;
         List<Vacunas> listaVacunas;
 
         public formVacunas()
@@ -30,8 +32,10 @@ namespace SICOVI
             listaVacunas = new List<Vacunas>();
             VacunasD vacunasD = new VacunasD();
 
+            
             listaVacunas = vacunasD.obtenerVacunas();
             dgvVacunas.DataSource = listaVacunas;
+            dgvVacunas.Columns[0].Visible = false;
         }
         private void limpiar()
         {
@@ -150,8 +154,19 @@ namespace SICOVI
             {
                 try
                 {
-                    
+                    vacunasD = new VacunasD();
+                    vacunas = new Vacunas();
+
+                    vacunas.ID_Vacuna = id;
+                    vacunas.Nombre = txtNombre.Text;
+                    vacunas.Descripcion = txtDescripcion.Text;
+                    vacunas.Edad = Convert.ToInt32(txtEdad.Text);
+
+                    vacunasD.actualizarVacunas(vacunas);
+
                     MessageBox.Show("Datos actualizados correctamente.");
+                    actualizarDataGridView();
+                    limpiar();
                 }
                 catch (Exception ex)
                 {
@@ -162,8 +177,42 @@ namespace SICOVI
 
         private void dgvVacunas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    object value = dgvVacunas.Rows[e.RowIndex].Cells[1].Value;
+                    nombreVac = Convert.ToString(value);
+                    vacunas = new Vacunas();
+                    vacunasD = new VacunasD();
 
+                    vacunas = vacunasD.obtenerUnaVacuna(nombreVac);
+
+                    id = vacunas.ID_Vacuna;
+                    txtNombre.Text = vacunas.Nombre;
+                    txtDescripcion.Text = vacunas.Descripcion;
+                    txtEdad.Text = vacunas.Edad.ToString();
+                    modoEditable(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        public void modoEditable(bool estado)
+        {
+            txtNombre.Enabled = !estado;
+            txtDescripcion.Enabled = !estado;
+            txtEdad.Enabled = !estado;
+            btnModificar.Enabled = !estado;
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            modoEditable(false);
         }
     }
 }

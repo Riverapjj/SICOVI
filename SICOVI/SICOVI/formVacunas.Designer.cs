@@ -53,6 +53,7 @@
             this.dgvVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVacunas.Location = new System.Drawing.Point(27, 231);
             this.dgvVacunas.Name = "dgvVacunas";
+            this.dgvVacunas.ReadOnly = true;
             this.dgvVacunas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVacunas.Size = new System.Drawing.Size(959, 264);
             this.dgvVacunas.TabIndex = 2;
@@ -154,11 +155,13 @@
             this.btnLimpiar.TabIndex = 29;
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnModificar.BackColor = System.Drawing.Color.Teal;
+            this.btnModificar.Enabled = false;
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
