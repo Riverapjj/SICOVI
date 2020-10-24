@@ -9,14 +9,14 @@ namespace SICOVI.Modelos
     public class Vacunas
     {
 
-        string nombre_vacuna;
-        string descripción_vacuna;
-        int edad_aplicacion;
+        string nombre;
+        string descripcion;
+        int edad;
 
 
         
-        public string Nombre_vacuna { get => nombre_vacuna; set => nombre_vacuna = value; }
-        public string Descripción_vacuna { get => descripción_vacuna; set => descripción_vacuna = value; }
-        public int Edad_aplicacion { get => edad_aplicacion; set => edad_aplicacion = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int Edad { get => edad; set => edad = value; }
     }
 }

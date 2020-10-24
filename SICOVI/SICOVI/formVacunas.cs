@@ -22,19 +22,16 @@ namespace SICOVI
         public formVacunas()
         {
             InitializeComponent();
-            actualizar();
+            actualizarDataGridView();
         }
-        private void actualizar()
+        private void actualizarDataGridView()
         {
-            try
-            {
-                
-                //dgvVacunas.DataSource = dataSet.Tables[0];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            dgvVacunas.DataSource = null;
+            listaVacunas = new List<Vacunas>();
+            VacunasD vacunasD = new VacunasD();
+
+            listaVacunas = vacunasD.obtenerVacunas();
+            dgvVacunas.DataSource = listaVacunas;
         }
         private void limpiar()
         {
@@ -102,9 +99,9 @@ namespace SICOVI
                         vacunas = new Vacunas();
                         vacunasD = new VacunasD();
 
-                        vacunas.Nombre_vacuna = txtNombre.Text;
-                        vacunas.Descripción_vacuna = txtDescripcion.Text;
-                        vacunas.Edad_aplicacion = edad;
+                        vacunas.Nombre = txtNombre.Text;
+                        vacunas.Descripcion = txtDescripcion.Text;
+                        vacunas.Edad = edad;
 
                         vacunasD.insertarVacuna(vacunas);
                         MessageBox.Show("Datos ingresados correctamente.");
@@ -114,7 +111,7 @@ namespace SICOVI
                         MessageBox.Show(ex.Message);
                     }
 
-                    actualizar();
+                    actualizarDataGridView();
                     limpiar();
 
                 }

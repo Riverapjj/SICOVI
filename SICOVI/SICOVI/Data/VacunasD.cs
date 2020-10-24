@@ -25,9 +25,9 @@ namespace SICOVI.Data
             string comando = "Insertar_Vacuna";
             SqlParameterCollection parametros = new SqlCommand().Parameters;
 
-            parametros.Add("@Nombre", vacunas.Nombre_vacuna);
-            parametros.Add("@Descripcion", vacunas.Descripción_vacuna);
-            parametros.Add("@Edad_Aplicacion", vacunas.Edad_aplicacion);
+            parametros.Add("@Nombre", vacunas.Nombre);
+            parametros.Add("@Descripcion", vacunas.Descripcion);
+            parametros.Add("@Edad_Aplicacion", vacunas.Edad);
 
             try
             {
@@ -39,6 +39,29 @@ namespace SICOVI.Data
             }
 
             return resultado;
+        }
+
+        public List<Vacunas> obtenerVacunas()
+        {
+            SqlDataReader dataReader;
+            List<Vacunas> listaVacunas = new List<Vacunas>();
+            string consulta = "SELECT Nombre, Descripcion, Edad_Aplicacion AS [Edad de aplicacion] FROM Vacunas";
+
+            dataReader = conexion.retornarLista(consulta, null);
+
+            while (dataReader.Read())
+            {
+                listaVacunas.Add(new Vacunas() { 
+
+                    Nombre = dataReader["Nombre"].ToString(),
+                    Descripcion = dataReader["Descripcion"].ToString(),
+                    Edad = Convert.ToInt32(dataReader["Edad de aplicacion"])
+                });
+            }
+
+            conexion.desconectar();
+
+            return listaVacunas;
         }
     }
 }

@@ -70,6 +70,15 @@ namespace SICOVI.Clases
             return insertado;
         }
 
+        public SqlDataReader retornarLista(string consulta, SqlParameterCollection parametros)
+        {
+            cmd = new SqlCommand(consulta, conn);
+            conectar();
+            SqlDataReader dataReader = cmd.ExecuteReader();
+
+            return dataReader;
+        }
+
 
     }
 
