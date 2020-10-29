@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgvPacientes = new System.Windows.Forms.DataGridView();
-            this.txNomPaciente = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtNomPaciente = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.txtNomPadre = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -62,24 +62,26 @@
             this.dgvPacientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPacientes.Location = new System.Drawing.Point(26, 260);
             this.dgvPacientes.Name = "dgvPacientes";
+            this.dgvPacientes.ReadOnly = true;
+            this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPacientes.Size = new System.Drawing.Size(977, 264);
             this.dgvPacientes.TabIndex = 1;
             // 
-            // txNomPaciente
+            // txtNomPaciente
             // 
-            this.txNomPaciente.Depth = 0;
-            this.txNomPaciente.Hint = "Nombre de paciente";
-            this.txNomPaciente.Location = new System.Drawing.Point(73, 94);
-            this.txNomPaciente.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txNomPaciente.Name = "txNomPaciente";
-            this.txNomPaciente.PasswordChar = '\0';
-            this.txNomPaciente.SelectedText = "";
-            this.txNomPaciente.SelectionLength = 0;
-            this.txNomPaciente.SelectionStart = 0;
-            this.txNomPaciente.Size = new System.Drawing.Size(213, 23);
-            this.txNomPaciente.TabIndex = 7;
-            this.txNomPaciente.UseSystemPasswordChar = false;
-            this.txNomPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
+            this.txtNomPaciente.Depth = 0;
+            this.txtNomPaciente.Hint = "Nombre de paciente";
+            this.txtNomPaciente.Location = new System.Drawing.Point(73, 94);
+            this.txtNomPaciente.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNomPaciente.Name = "txtNomPaciente";
+            this.txtNomPaciente.PasswordChar = '\0';
+            this.txtNomPaciente.SelectedText = "";
+            this.txtNomPaciente.SelectionLength = 0;
+            this.txtNomPaciente.SelectionStart = 0;
+            this.txtNomPaciente.Size = new System.Drawing.Size(213, 23);
+            this.txtNomPaciente.TabIndex = 7;
+            this.txtNomPaciente.UseSystemPasswordChar = false;
+            this.txtNomPaciente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txNombre_KeyPress);
             // 
             // iconButton1
             // 
@@ -270,6 +272,7 @@
             this.btnModificar.TabIndex = 20;
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label1
             // 
@@ -408,7 +411,7 @@
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.txtNomPadre);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.txNomPaciente);
+            this.Controls.Add(this.txtNomPaciente);
             this.Controls.Add(this.dgvPacientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formPacientes";
@@ -423,7 +426,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPacientes;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txNomPaciente;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNomPaciente;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNomPadre;

@@ -7,18 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SICOVI.Modelos;
+using SICOVI.Data;
 
 namespace SICOVI
 {
     public partial class formPacientes : Form
     {
+        PacientesD pacientesD;
+        Paciente paciente;
+        string id;
+        List<Paciente> listaPacientes;
+
         public formPacientes()
         {
             InitializeComponent();
+            actualizarDataGridView();
         }
         private void Limpiar()
         {
-            txNomPaciente.Clear();
+            txtNomPaciente.Clear();
             txtISSS.Clear();
             txtNomMadre.Clear();
             txtNomPadre.Clear();
@@ -26,16 +34,30 @@ namespace SICOVI
             txtISSS.Clear();
             txtNomRespon.Clear();
         }
-        private void actualizar()
+        private void actualizarDataGridView()
         {
+            dgvPacientes.DataSource = null;
+            listaPacientes = new List<Paciente>();
+            PacientesD pacientesD = new PacientesD();
+
+
+            listaPacientes = pacientesD.obtenerPacientes();
+            dgvPacientes.DataSource = listaPacientes;
+            dgvPacientes.Columns[0].HeaderText = "Nombre de paciente";
+            dgvPacientes.Columns[1].HeaderText = "Fecha de nacimiento";
+            dgvPacientes.Columns[2].Visible = false;
+            dgvPacientes.Columns[3].Visible = false;
+            dgvPacientes.Columns[4].HeaderText = "Nombre de responsable";
+            dgvPacientes.Columns[5].HeaderText = "DUI de responsable";
+            dgvPacientes.Columns[6].HeaderText = "N° ISS";
         }
         private bool vacio()
         {
             bool vacio = true;
-            if (txNomPaciente.Text == "")
+            if (txtNomPaciente.Text == "")
             {
               vacio = false;
-                errorProvider1.SetError(txNomPaciente, "no se permite espacios vacios");
+                errorProvider1.SetError(txtNomPaciente, "no se permite espacios vacios");
             }
             if (txtNomPadre.Text == "")
             {
@@ -71,10 +93,10 @@ namespace SICOVI
         private bool restrinciones()
         {
             bool restrinciones = true;
-            if (txNomPaciente.Text == "")
+            if (txtNomPaciente.Text == "")
             {
                 restrinciones = false;
-                errorProvider1.SetError(txNomPaciente, "SOLO SE PERMITEN LETRAS");
+                errorProvider1.SetError(txtNomPaciente, "SOLO SE PERMITEN LETRAS");
             }
             return restrinciones;
         }
@@ -132,12 +154,12 @@ namespace SICOVI
 
         private void borrar()
         {
-            errorProvider1.SetError(txNomPaciente, "");
+            errorProvider1.SetError(txtNomPaciente, "");
             errorProvider1.SetError(txtNomPadre, "");
             errorProvider1.SetError(txtNomMadre, "");
             errorProvider1.SetError(txtNomMadre, "");
             errorProvider1.SetError(txtNomRespon, "");
-            errorProvider1.SetError(txNomPaciente, "");
+            errorProvider1.SetError(txtNomPaciente, "");
             errorProvider1.SetError(txtDUI, "");
         }
 
@@ -153,7 +175,48 @@ namespace SICOVI
             borrar();
             if (vacio())
             {
-                actualizar();
+                string formatoDUI = txtDUI.Text;
+                if (formatoDUI.Count(char.IsDigit) == 9)
+                {
+                    if (formatoDUI[8] == '-')
+                    {
+                        try
+                        {
+                            paciente = new Paciente();
+                            pacientesD = new PacientesD();
+
+                            paciente.Nombre_paciente = txtNomPaciente.Text;
+                            paciente.Nombre_madre = txtNomMadre.Text;
+                            paciente.Nombre_padre = txtNomPadre.Text;
+                            paciente.Nombre_responsable = txtNomRespon.Text;
+                            paciente.Num_dui_resposable = txtDUI.Text;
+                            paciente.Num_seguro_responsable = txtISSS.Text;
+                            paciente.Fecha_nacimiento = dtpFechaNac.Value;
+
+                            pacientesD.insertarPacientes(paciente);
+                            MessageBox.Show("Datos ingresados correctamente.");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0 2");
+                        Limpiar();
+                    }
+
+                }
+                else 
+                {
+                    MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0 1");
+                    Limpiar();
+                }
+                
+
+                actualizarDataGridView();
                 Limpiar();
             }
 
@@ -264,25 +327,25 @@ namespace SICOVI
         {
             
 
-            borrar();
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            //para tecla backspace
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            //borrar();
+            //if (char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
+            ////para tecla backspace
+            //else if (char.IsControl(e.KeyChar))
+            //{
+            //    e.Handled = false;
+            //}
 
 
 
-            else
-            {
-                e.Handled = true;
-                restrinciones5();
+            //else
+            //{
+            //    e.Handled = true;
+            //    restrinciones5();
 
-            }
+            //}
 
         }
 
@@ -308,6 +371,11 @@ namespace SICOVI
                 e.Handled = true;
                 restrinciones6();
             }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

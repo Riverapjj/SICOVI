@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Data\PacientesD.cs" />
     <Compile Include="Data\VacunasD.cs" />
     <Compile Include="Modelos\Consultas.cs" />
     <Compile Include="formAdmin.cs">
