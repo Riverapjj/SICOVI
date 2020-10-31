@@ -117,5 +117,10 @@ namespace SICOVI
         {
             Application.Exit();
         }
+
+        private void btnRangos_Click(object sender, EventArgs e)
+        {
+            abrirFormHijo(new formRangos());
+        }
     }
 }

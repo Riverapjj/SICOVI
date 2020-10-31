@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPrincipal));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnRangos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSalir = new MaterialSkin.Controls.MaterialFlatButton();
             this.panelSubMenuUsuario = new System.Windows.Forms.Panel();
@@ -45,7 +46,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnRangos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubMenuUsuario.SuspendLayout();
@@ -71,6 +71,20 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(190, 644);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btnRangos
+            // 
+            this.btnRangos.Depth = 0;
+            this.btnRangos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRangos.Location = new System.Drawing.Point(0, 343);
+            this.btnRangos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRangos.Name = "btnRangos";
+            this.btnRangos.Primary = true;
+            this.btnRangos.Size = new System.Drawing.Size(190, 45);
+            this.btnRangos.TabIndex = 1;
+            this.btnRangos.Text = "RANGOS";
+            this.btnRangos.UseVisualStyleBackColor = true;
+            this.btnRangos.Click += new System.EventHandler(this.btnRangos_Click);
             // 
             // panel1
             // 
@@ -279,19 +293,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // btnRangos
-            // 
-            this.btnRangos.Depth = 0;
-            this.btnRangos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRangos.Location = new System.Drawing.Point(0, 343);
-            this.btnRangos.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRangos.Name = "btnRangos";
-            this.btnRangos.Primary = true;
-            this.btnRangos.Size = new System.Drawing.Size(190, 45);
-            this.btnRangos.TabIndex = 1;
-            this.btnRangos.Text = "RANGOS";
-            this.btnRangos.UseVisualStyleBackColor = true;
             // 
             // formPrincipal
             // 

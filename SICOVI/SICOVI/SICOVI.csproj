@@ -55,6 +55,12 @@
     <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Data\PacientesD.cs" />
     <Compile Include="Data\VacunasD.cs" />
+    <Compile Include="formRangos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formRangos.Designer.cs">
+      <DependentUpon>formRangos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelos\Consultas.cs" />
     <Compile Include="formAdmin.cs">
       <SubType>Form</SubType>
@@ -151,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formRangos.resx">
+      <DependentUpon>formRangos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formRecepcionistas.resx">
       <DependentUpon>formRecepcionistas.cs</DependentUpon>
