@@ -50,6 +50,7 @@ namespace SICOVI
             dgvPacientes.Columns[4].HeaderText = "Nombre de responsable";
             dgvPacientes.Columns[5].HeaderText = "DUI de responsable";
             dgvPacientes.Columns[6].HeaderText = "N° ISS";
+            dgvPacientes.Columns[7].Visible = false;
         }
         private bool vacio()
         {
@@ -152,6 +153,17 @@ namespace SICOVI
             return restrinciones6;
         }
 
+        public void modoEditable(bool estado)
+        {
+            txtNomPaciente.Enabled = !estado;
+            txtNomPadre.Enabled = !estado;
+            txtNomMadre.Enabled = !estado;
+            txtNomRespon.Enabled = !estado;
+            txtDUI.Enabled = !estado;
+            txtISSS.Enabled = !estado;
+            dtpFechaNac.Enabled = !estado;
+            btnModificar.Enabled = !estado;
+        }
         private void borrar()
         {
             errorProvider1.SetError(txtNomPaciente, "");
@@ -375,7 +387,69 @@ namespace SICOVI
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
+            borrar();
+            if (vacio())
+            {
+                try
+                {
+                    pacientesD = new PacientesD();
+                    paciente = new Paciente();
 
+                    paciente.ID_Paciente = id;
+                    paciente.Nombre_paciente = txtNomPaciente.Text;
+                    paciente.Nombre_padre = txtNomPadre.Text;
+                    paciente.Nombre_madre = txtNomMadre.Text;
+                    paciente.Nombre_responsable = txtNomRespon.Text;
+                    paciente.Num_dui_resposable = txtDUI.Text;
+                    paciente.Num_seguro_responsable = txtISSS.Text;
+                    paciente.Fecha_nacimiento = dtpFechaNac.Value.Date;
+
+                    pacientesD.actualizarPaciente(paciente);
+
+                    MessageBox.Show("Datos actualizados correctamente.");
+                    actualizarDataGridView();
+                    Limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        private void dgvPacientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                if (e.RowIndex >= 0)
+                {
+                    object value = dgvPacientes.Rows[e.RowIndex].Cells[7].Value;
+                    id = Convert.ToString(value);
+                    paciente = new Paciente();
+                    pacientesD = new PacientesD();
+
+                    paciente = pacientesD.obtenerUnPaciente(id);
+
+                    txtNomPaciente.Text = paciente.Nombre_paciente;
+                    txtNomMadre.Text = paciente.Nombre_madre;
+                    txtNomPadre.Text = paciente.Nombre_padre;
+                    txtNomRespon.Text = paciente.Nombre_responsable;
+                    txtDUI.Text = paciente.Num_dui_resposable;
+                    txtISSS.Text = paciente.Num_seguro_responsable;
+                    dtpFechaNac.Value = Convert.ToDateTime(paciente.Fecha_nacimiento).Date;
+                    modoEditable(true);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            modoEditable(false);
         }
     }
 }

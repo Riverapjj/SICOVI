@@ -15,6 +15,7 @@ namespace SICOVI.Modelos
         string nombre_responsable;
         string num_dui_resposable;
         string num_seguro_responsable;
+        string id_paciente;
 
         public string Nombre_paciente { get => nombre_paciente; set => nombre_paciente = value; }
         public DateTime Fecha_nacimiento { get => fecha_nacimiento; set => fecha_nacimiento = value; }
@@ -23,5 +24,6 @@ namespace SICOVI.Modelos
         public string Nombre_responsable { get => nombre_responsable; set => nombre_responsable = value; }
         public string Num_dui_resposable { get => num_dui_resposable; set => num_dui_resposable = value; }
         public string Num_seguro_responsable { get => num_seguro_responsable; set => num_seguro_responsable = value; }
+        public string ID_Paciente { get => id_paciente; set => id_paciente = value; }
     }
 }

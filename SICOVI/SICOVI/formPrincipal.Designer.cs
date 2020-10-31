@@ -45,6 +45,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnRangos = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelSubMenuUsuario.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.panelMenu.AutoScroll = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(189)))), ((int)(((byte)(154)))));
+            this.panelMenu.Controls.Add(this.btnRangos);
             this.panelMenu.Controls.Add(this.panel1);
             this.panelMenu.Controls.Add(this.panelSubMenuUsuario);
             this.panelMenu.Controls.Add(this.btnUsuario);
@@ -278,6 +280,19 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // btnRangos
+            // 
+            this.btnRangos.Depth = 0;
+            this.btnRangos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRangos.Location = new System.Drawing.Point(0, 343);
+            this.btnRangos.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRangos.Name = "btnRangos";
+            this.btnRangos.Primary = true;
+            this.btnRangos.Size = new System.Drawing.Size(190, 45);
+            this.btnRangos.TabIndex = 1;
+            this.btnRangos.Text = "RANGOS";
+            this.btnRangos.UseVisualStyleBackColor = true;
+            // 
             // formPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +338,7 @@
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRangos;
     }
 }
 
