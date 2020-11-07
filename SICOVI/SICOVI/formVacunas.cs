@@ -26,6 +26,7 @@ namespace SICOVI
             InitializeComponent();
             actualizarDataGridView();
         }
+
         private void actualizarDataGridView()
         {
             dgvVacunas.DataSource = null;
@@ -37,6 +38,7 @@ namespace SICOVI
             dgvVacunas.DataSource = listaVacunas;
             dgvVacunas.Columns[0].Visible = false;
         }
+
         private void limpiar()
         {
             txtNombre.Clear();

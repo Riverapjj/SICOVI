@@ -11,7 +11,7 @@ namespace SICOVI.Modelos
         string nombre;
         string usuario;
         string contra;
-        string rango;
+        int rango;
         string dui;
         string telefono;
         string email;
@@ -20,7 +20,7 @@ namespace SICOVI.Modelos
         public string Usuario { get => usuario; set => usuario = value; }
         public string Contra { get => contra; set => contra = value; }
         public string Dui { get => dui; set => dui = value; }
-        public string Rango { get => rango; set => rango = value; }
+        public int Rango { get => rango; set => rango = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Email { get => email; set => email = value; }
     }

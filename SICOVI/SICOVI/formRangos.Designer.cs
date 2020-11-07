@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.materialSingleLineTextField1 = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.dgvRangos = new System.Windows.Forms.DataGridView();
+            this.txtNombreRango = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.checkBitacora = new MaterialSkin.Controls.MaterialCheckBox();
@@ -41,7 +42,9 @@
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
             this.btnModificar = new FontAwesome.Sharp.IconButton();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRangos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,29 +59,31 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "GESTIÓN DE RANGOS";
             // 
-            // dataGridView1
+            // dgvRangos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(499, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(510, 470);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvRangos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRangos.Location = new System.Drawing.Point(499, 74);
+            this.dgvRangos.Name = "dgvRangos";
+            this.dgvRangos.ReadOnly = true;
+            this.dgvRangos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvRangos.Size = new System.Drawing.Size(510, 470);
+            this.dgvRangos.TabIndex = 6;
+            this.dgvRangos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRangos_CellClick);
             // 
-            // materialSingleLineTextField1
+            // txtNombreRango
             // 
-            this.materialSingleLineTextField1.Depth = 0;
-            this.materialSingleLineTextField1.Hint = "";
-            this.materialSingleLineTextField1.Location = new System.Drawing.Point(92, 160);
-            this.materialSingleLineTextField1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialSingleLineTextField1.Name = "materialSingleLineTextField1";
-            this.materialSingleLineTextField1.PasswordChar = '\0';
-            this.materialSingleLineTextField1.SelectedText = "";
-            this.materialSingleLineTextField1.SelectionLength = 0;
-            this.materialSingleLineTextField1.SelectionStart = 0;
-            this.materialSingleLineTextField1.Size = new System.Drawing.Size(257, 23);
-            this.materialSingleLineTextField1.TabIndex = 7;
-            this.materialSingleLineTextField1.Text = "Nombre de rango";
-            this.materialSingleLineTextField1.UseSystemPasswordChar = false;
+            this.txtNombreRango.Depth = 0;
+            this.txtNombreRango.Hint = "Nombre de rango";
+            this.txtNombreRango.Location = new System.Drawing.Point(92, 160);
+            this.txtNombreRango.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreRango.Name = "txtNombreRango";
+            this.txtNombreRango.PasswordChar = '\0';
+            this.txtNombreRango.SelectedText = "";
+            this.txtNombreRango.SelectionLength = 0;
+            this.txtNombreRango.SelectionStart = 0;
+            this.txtNombreRango.Size = new System.Drawing.Size(257, 23);
+            this.txtNombreRango.TabIndex = 7;
+            this.txtNombreRango.UseSystemPasswordChar = false;
             // 
             // iconButton1
             // 
@@ -114,7 +119,7 @@
             // 
             this.checkBitacora.AutoSize = true;
             this.checkBitacora.Depth = 0;
-            this.checkBitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.checkBitacora.Font = new System.Drawing.Font("Roboto", 10F);
             this.checkBitacora.Location = new System.Drawing.Point(64, 271);
             this.checkBitacora.Margin = new System.Windows.Forms.Padding(0);
             this.checkBitacora.MouseLocation = new System.Drawing.Point(-1, -1);
@@ -252,6 +257,10 @@
             this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // formRangos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,13 +276,14 @@
             this.Controls.Add(this.checkBitacora);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.materialSingleLineTextField1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtNombreRango);
+            this.Controls.Add(this.dgvRangos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formRangos";
             this.Text = "formRangos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRangos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,8 +292,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private MaterialSkin.Controls.MaterialSingleLineTextField materialSingleLineTextField1;
+        private System.Windows.Forms.DataGridView dgvRangos;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreRango;
         private FontAwesome.Sharp.IconButton iconButton1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialCheckBox checkBitacora;
@@ -294,5 +304,6 @@
         private FontAwesome.Sharp.IconButton btnLimpiar;
         private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnAgregar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

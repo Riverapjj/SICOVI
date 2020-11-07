@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SICOVI.Data;
+using SICOVI.Modelos;
 
 namespace SICOVI
 {
@@ -34,9 +36,32 @@ namespace SICOVI
         
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
-            formPrincipal formprincipal = new formPrincipal();
-            formprincipal.Show();
-            this.Hide();
+            if (txtUsuario.Text.Trim() != "" && txtClave.Text.Trim() != "")
+            {
+                Usuarios usuarios = new Usuarios();
+                UsuariosD usuariosD = new UsuariosD();
+
+                usuarios = usuariosD.login(txtUsuario.Text, txtClave.Text);
+
+                if (usuarios != null)
+                {
+                    formPrincipal formprincipal = new formPrincipal();
+                    formprincipal.Show();
+                    this.Hide();
+                }
+                else 
+                {
+                    MessageBox.Show("Usuario y/o contraseña erróneo.");
+                    txtClave.Clear();
+                    txtUsuario.Clear();
+                }
+            }
+            else 
+            {
+                MessageBox.Show("Ingrese usuario y/o contraseña.");
+                txtClave.Clear();
+                txtUsuario.Clear();
+            }
         }
     }
 }
