@@ -57,6 +57,7 @@
             // txtNombre
             // 
             this.txtNombre.Depth = 0;
+            this.txtNombre.Enabled = false;
             this.txtNombre.Hint = "Nombre de paciente";
             this.txtNombre.Location = new System.Drawing.Point(181, 116);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
@@ -168,6 +169,7 @@
             this.Name = "formPacienteVacuna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "formPacienteVacuna";
+            this.Load += new System.EventHandler(this.formPacienteVacuna_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

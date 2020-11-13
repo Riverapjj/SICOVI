@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Animations;
 using MaterialSkin.Controls;
+using SICOVI.Clases;
+using SICOVI.Data;
 
 namespace SICOVI
 {
@@ -19,6 +21,9 @@ namespace SICOVI
             InitializeComponent();
             inicializarSubMenu();
         }
+
+        public int ID_Rango;
+        public string NomUsuario;
 
         private void inicializarSubMenu()
         {
@@ -121,6 +126,47 @@ namespace SICOVI
         private void btnRangos_Click(object sender, EventArgs e)
         {
             abrirFormHijo(new formRangos());
+        }
+
+        private void formPrincipal_Load(object sender, EventArgs e)
+        {
+            List<string> listaFormularios = new List<string>();
+            RangosD rangosD = new RangosD();
+            listaFormularios = rangosD.obtenerFormularios(ID_Rango);
+
+            btnControles.Hide();
+            btnRangos.Hide();
+            btnUsuario.Hide();
+            btnVacuna.Hide();
+            btnPaciente.Hide();
+
+            foreach (string form in listaFormularios)
+            {
+                if (form.Trim() == "btnPaciente")
+                {
+                    btnPaciente.Show();
+                }
+                /**/
+                if (form.Trim() == "btnVacuna")
+                {
+                    btnVacuna.Show();
+                }
+                /**/
+                if (form.Trim() == "btnControles")
+                {
+                    btnControles.Show();
+                }
+                /**/
+                if (form.Trim() == "btnUsuario")
+                {
+                    btnUsuario.Show();
+                }
+                /**/
+                if (form.Trim() == "btnRangos")
+                {
+                    btnRangos.Show();
+                }
+            }
         }
     }
 }

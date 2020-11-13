@@ -19,8 +19,6 @@ namespace SICOVI.Data
             conexion = new Conexion();
         }
 
-        int rango;
-
         public Usuarios login(string NomUsuario, string Clave)
         {
             Usuarios usuarios = null;
@@ -46,7 +44,7 @@ namespace SICOVI.Data
                     Email = dataReader["Email"].ToString()
                 };
             }
-            rango = usuarios.Rango;
+
             return usuarios;
         }
     }

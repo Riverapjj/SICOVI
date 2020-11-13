@@ -123,7 +123,7 @@
             // txtEdad
             // 
             this.txtEdad.Depth = 0;
-            this.txtEdad.Hint = "Edad de aplicación";
+            this.txtEdad.Hint = "Edad de aplicación en meses";
             this.txtEdad.Location = new System.Drawing.Point(78, 151);
             this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEdad.Name = "txtEdad";

@@ -24,6 +24,7 @@ namespace SICOVI
             thread.Abort();
         }
 
+
         public void ejecutarSplash()
         {
             Application.Run(new formSplash());
@@ -46,7 +47,9 @@ namespace SICOVI
                 if (usuarios != null)
                 {
                     formPrincipal formprincipal = new formPrincipal();
-                    formprincipal.Show();
+                    formprincipal.ID_Rango = usuarios.Rango;
+                    formprincipal.NomUsuario = usuarios.Nombre;
+                    formprincipal.Show();                    
                     this.Hide();
                 }
                 else 

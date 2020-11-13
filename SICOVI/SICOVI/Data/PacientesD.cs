@@ -44,6 +44,26 @@ namespace SICOVI.Data
             return listaPacientes;
         }
 
+        public List<string> obtenerVacunasXPaciente(string NomPaciente)
+        {
+            SqlDataReader dataReader;
+            List<string> listaVacunas = new List<string>();
+            string consulta = "SELECT Nombre FROM Vacunas WHERE Edad_Aplicacion >= (SELECT DATEDIFF(month, GETDATE(), Fecha_Nacimiento) FROM Pacientes WHERE Nombre = @NomPaciente)";
+            SqlParameterCollection parametro = new SqlCommand().Parameters;
+            
+
+            parametro.AddWithValue("@NomPaciente", NomPaciente);
+
+            dataReader = conexion.retornarLista(consulta, parametro);
+
+            while (dataReader.Read())
+            {
+                listaVacunas.Add(dataReader["Nombre"].ToString());
+            }
+
+            return listaVacunas;
+        }
+
         public bool actualizarPaciente(Paciente paciente)
         {
             bool resultado = false;

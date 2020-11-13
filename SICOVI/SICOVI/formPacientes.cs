@@ -18,6 +18,7 @@ namespace SICOVI
         Paciente paciente;
         string id;
         List<Paciente> listaPacientes;
+        formPacienteVacuna formvac = new formPacienteVacuna();
 
         public formPacientes()
         {
@@ -33,6 +34,7 @@ namespace SICOVI
             txtDUI.Clear();
             txtISSS.Clear();
             txtNomRespon.Clear();
+            btnModificar.Enabled = false;
         }
         private void actualizarDataGridView()
         {
@@ -177,7 +179,7 @@ namespace SICOVI
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            formPacienteVacuna formvac = new formPacienteVacuna();
+            
             formvac.Show();
 
         }
@@ -438,6 +440,10 @@ namespace SICOVI
                     txtDUI.Text = paciente.Num_dui_resposable;
                     txtISSS.Text = paciente.Num_seguro_responsable;
                     dtpFechaNac.Value = Convert.ToDateTime(paciente.Fecha_nacimiento).Date;
+
+                    formvac.NomPaciente = paciente.Nombre_paciente;
+                    formvac.listaVacunas = pacientesD.obtenerVacunasXPaciente(txtNomPaciente.Text.Trim());
+
                     modoEditable(true);
                 }
             }

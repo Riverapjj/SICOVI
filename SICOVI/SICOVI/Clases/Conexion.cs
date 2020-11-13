@@ -87,6 +87,32 @@ namespace SICOVI.Clases
             return dataReader;
         }
 
+        public bool delete(string comando, SqlParameterCollection parametros)
+        {
+            bool borrado = false;
+            try
+            {
+                cmd = conn.CreateCommand();
+                cmd.CommandText = comando;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (SqlParameter param in parametros)
+                {
+                    cmd.Parameters.AddWithValue(param.ParameterName, param.Value);
+                }
+
+                conectar();
+                cmd.ExecuteNonQuery();
+                borrado = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return borrado;
+        }
+
         public bool update(string comando, SqlParameterCollection parametros)
         {
             bool actualizado = false;

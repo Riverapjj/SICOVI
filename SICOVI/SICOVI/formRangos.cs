@@ -41,6 +41,7 @@ namespace SICOVI
 
         private void modoEditable(bool estado)
         {
+            txtNombreRango.Enabled = !estado;
             checkPacientes.Enabled = !estado;
             checkRangos.Enabled = !estado;
             checkUsuarios.Enabled = !estado;
@@ -49,6 +50,18 @@ namespace SICOVI
             btnModificar.Enabled = !estado;
             btnLimpiar.Enabled = estado;
         }
+
+        private void bloquearDespuesUpdate(bool estado)
+        {
+            checkPacientes.Enabled = !estado;
+            checkRangos.Enabled = !estado;
+            checkUsuarios.Enabled = !estado;
+            checkVacunas.Enabled = !estado;
+            checkBitacora.Enabled = !estado;
+            btnModificar.Enabled = !estado;
+            btnLimpiar.Enabled = estado;
+        }
+
         private bool validar()
         {
             bool validar = true;
@@ -73,6 +86,15 @@ namespace SICOVI
             checkRangos.Checked = false;
             checkUsuarios.Checked = false;
             checkVacunas.Checked = false;
+        }
+
+        private void quitarChecked(bool estado)
+        {
+            checkBitacora.Checked = estado;
+            checkPacientes.Checked = estado;
+            checkRangos.Checked = estado;
+            checkUsuarios.Checked = estado;
+            checkVacunas.Checked = estado;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -116,6 +138,7 @@ namespace SICOVI
 
                     rango = rangosD.obtenerUnRango(id);
                     listaFormularios = rangosD.obtenerFormularios(id);
+                    quitarChecked(false);
 
                     foreach (var form in listaFormularios)
                     {
@@ -151,6 +174,84 @@ namespace SICOVI
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            modoEditable(false);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rangosD = new RangosD();
+
+                string nombreFormulario;
+                /**/
+                if (checkBitacora.Checked)
+                {
+                    nombreFormulario = "btnControles";
+                    rangosD.insertFormularioXRango(id, nombreFormulario);
+                }
+                else 
+                {
+                    nombreFormulario = "btnControles";
+                    rangosD.deleteFormulariosXRango(id, nombreFormulario);
+                }
+                /**/
+                if (checkPacientes.Checked)
+                {
+                    nombreFormulario = "btnPaciente";
+                    rangosD.insertFormularioXRango(id, nombreFormulario);
+                }
+                else
+                {
+                    nombreFormulario = "btnPaciente";
+                    rangosD.deleteFormulariosXRango(id, nombreFormulario);
+                }
+                /**/
+                if (checkRangos.Checked)
+                {
+                    nombreFormulario = "btnRangos";
+                    rangosD.insertFormularioXRango(id, nombreFormulario);
+                }
+                else
+                {
+                    nombreFormulario = "btnRangos";
+                    rangosD.deleteFormulariosXRango(id, nombreFormulario);
+                }
+                /**/
+                if (checkUsuarios.Checked)
+                {
+                    nombreFormulario = "btnUsuario";
+                    rangosD.insertFormularioXRango(id, nombreFormulario);
+                }
+                else
+                {
+                    nombreFormulario = "btnUsuario";
+                    rangosD.deleteFormulariosXRango(id, nombreFormulario);
+                }
+                /**/
+                if (checkVacunas.Checked)
+                {
+                    nombreFormulario = "btnVacuna";
+                    rangosD.insertFormularioXRango(id, nombreFormulario);
+                }
+                else
+                {
+                    nombreFormulario = "btnVacuna";
+                    rangosD.deleteFormulariosXRango(id, nombreFormulario);
+                }
+
+                MessageBox.Show("Datos actualizados correctamente.");
+                quitarChecked(true);
+                bloquearDespuesUpdate(true);
+            }
+            catch 
+            { 
+            
             }
         }
     }

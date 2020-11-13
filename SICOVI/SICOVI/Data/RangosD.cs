@@ -18,6 +18,50 @@ namespace SICOVI.Data
             conexion = new Conexion();
         }
 
+        public bool insertFormularioXRango(int ID_Rango, string NomFormulario)
+        {
+            bool resultado = false;
+            string comando = "Actualizar_rangos";
+
+            SqlParameterCollection parametros = new SqlCommand().Parameters;
+
+            parametros.AddWithValue("@ID_Rango", ID_Rango);
+            parametros.AddWithValue("@NomFormulario", NomFormulario);
+
+            try
+            {
+                resultado = conexion.update(comando, parametros);
+            }
+            catch
+            {
+                resultado = false;
+            }
+
+            return resultado;
+        }
+
+        public bool deleteFormulariosXRango(int ID_Rango, string NomFormulario)
+        {
+            bool resultado = false;
+            string comando = "Delete_rangos";
+
+            SqlParameterCollection parametros = new SqlCommand().Parameters;
+
+            parametros.AddWithValue("@ID_Rango", ID_Rango);
+            parametros.AddWithValue("@NomFormulario", NomFormulario);
+
+            try
+            {
+                resultado = conexion.delete(comando, parametros);
+            }
+            catch
+            {
+                resultado = false;
+            }
+
+            return resultado;
+        }
+
         public bool insertarRangos(Rangos rango)
         {
             bool resultado = false;
