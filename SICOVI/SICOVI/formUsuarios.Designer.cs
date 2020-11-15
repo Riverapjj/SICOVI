@@ -1,6 +1,6 @@
 ﻿namespace SICOVI
 {
-    partial class formAdmin
+    partial class formUsuarios
     {
         /// <summary>
         /// Required designer variable.

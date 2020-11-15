@@ -35,6 +35,8 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.txtObservaciones = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // iconButton1
@@ -47,7 +49,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconSize = 25;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(133, 116);
+            this.iconButton1.Location = new System.Drawing.Point(131, 86);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Rotation = 0D;
             this.iconButton1.Size = new System.Drawing.Size(44, 19);
@@ -59,7 +61,7 @@
             this.txtNombre.Depth = 0;
             this.txtNombre.Enabled = false;
             this.txtNombre.Hint = "Nombre de paciente";
-            this.txtNombre.Location = new System.Drawing.Point(181, 116);
+            this.txtNombre.Location = new System.Drawing.Point(181, 86);
             this.txtNombre.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
@@ -85,7 +87,7 @@
             // cmbVacunas
             // 
             this.cmbVacunas.FormattingEnabled = true;
-            this.cmbVacunas.Location = new System.Drawing.Point(181, 180);
+            this.cmbVacunas.Location = new System.Drawing.Point(181, 144);
             this.cmbVacunas.Name = "cmbVacunas";
             this.cmbVacunas.Size = new System.Drawing.Size(213, 21);
             this.cmbVacunas.TabIndex = 24;
@@ -100,7 +102,7 @@
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconSize = 25;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton2.Location = new System.Drawing.Point(133, 180);
+            this.iconButton2.Location = new System.Drawing.Point(131, 146);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(44, 19);
@@ -128,6 +130,7 @@
             this.iconButton3.Text = "ACEPTAR";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.iconButton3_Click);
             // 
             // iconButton4
             // 
@@ -152,12 +155,46 @@
             this.iconButton4.UseVisualStyleBackColor = false;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
+            // iconButton5
+            // 
+            this.iconButton5.Enabled = false;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Receipt;
+            this.iconButton5.IconColor = System.Drawing.Color.Black;
+            this.iconButton5.IconSize = 25;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(25, 213);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Rotation = 0D;
+            this.iconButton5.Size = new System.Drawing.Size(44, 19);
+            this.iconButton5.TabIndex = 29;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Depth = 0;
+            this.txtObservaciones.Hint = "Observaciones";
+            this.txtObservaciones.Location = new System.Drawing.Point(79, 213);
+            this.txtObservaciones.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.PasswordChar = '\0';
+            this.txtObservaciones.SelectedText = "";
+            this.txtObservaciones.SelectionLength = 0;
+            this.txtObservaciones.SelectionStart = 0;
+            this.txtObservaciones.Size = new System.Drawing.Size(440, 23);
+            this.txtObservaciones.TabIndex = 30;
+            this.txtObservaciones.UseSystemPasswordChar = false;
+            // 
             // formPacienteVacuna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(564, 344);
+            this.Controls.Add(this.txtObservaciones);
+            this.Controls.Add(this.iconButton5);
             this.Controls.Add(this.iconButton4);
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
@@ -184,5 +221,7 @@
         private FontAwesome.Sharp.IconButton iconButton2;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
+        private FontAwesome.Sharp.IconButton iconButton5;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtObservaciones;
     }
 }

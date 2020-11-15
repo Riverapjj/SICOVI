@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SICOVI.Data;
 using SICOVI.Modelos;
+using SICOVI.Clases;
 
 namespace SICOVI
 {
@@ -47,9 +48,11 @@ namespace SICOVI
                 if (usuarios != null)
                 {
                     formPrincipal formprincipal = new formPrincipal();
+
                     formprincipal.ID_Rango = usuarios.Rango;
-                    formprincipal.NomUsuario = usuarios.Nombre;
-                    formprincipal.Show();                    
+                    DatosSesion.NomUsuario = usuarios.Nombre;
+                    formprincipal.Show();
+
                     this.Hide();
                 }
                 else 

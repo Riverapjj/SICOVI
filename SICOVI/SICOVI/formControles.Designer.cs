@@ -49,6 +49,9 @@
             // 
             // cmbPacientes
             // 
+            this.cmbPacientes.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbPacientes.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbPacientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPacientes.FormattingEnabled = true;
             this.cmbPacientes.Location = new System.Drawing.Point(29, 161);
             this.cmbPacientes.Name = "cmbPacientes";
@@ -91,6 +94,7 @@
             this.btnFiltrar.TabIndex = 5;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // formControles
             // 

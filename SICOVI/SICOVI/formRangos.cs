@@ -19,6 +19,7 @@ namespace SICOVI
             InitializeComponent();
             actualizarDataGridView();
             modoEditable(true);
+            txtNombreRango.Enabled = true;
         }
 
         Rangos rango;

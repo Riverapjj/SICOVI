@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SICOVI
 {
-    public partial class formAdmin : Form
+    public partial class formUsuarios : Form
     {
-        public formAdmin()
+        public formUsuarios()
         {
             InitializeComponent();
         }

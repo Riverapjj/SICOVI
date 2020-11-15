@@ -24,6 +24,7 @@ namespace SICOVI
 
         public int ID_Rango;
         public string NomUsuario;
+        public int ID_Usuario;
 
         private void inicializarSubMenu()
         {
@@ -62,7 +63,7 @@ namespace SICOVI
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             ocultarSubMenu();
-            abrirFormHijo(new formAdmin());
+            abrirFormHijo(new formUsuarios());
         }
 
         private void btnDoctor_Click(object sender, EventArgs e)
@@ -133,6 +134,7 @@ namespace SICOVI
             List<string> listaFormularios = new List<string>();
             RangosD rangosD = new RangosD();
             listaFormularios = rangosD.obtenerFormularios(ID_Rango);
+
 
             btnControles.Hide();
             btnRangos.Hide();

@@ -17,6 +17,7 @@ namespace SICOVI
         PacientesD pacientesD;
         Paciente paciente;
         string id;
+        public string NomUsuario;
         List<Paciente> listaPacientes;
         formPacienteVacuna formvac = new formPacienteVacuna();
 
@@ -179,9 +180,7 @@ namespace SICOVI
 
         private void iconButton6_Click(object sender, EventArgs e)
         {
-            
             formvac.Show();
-
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
