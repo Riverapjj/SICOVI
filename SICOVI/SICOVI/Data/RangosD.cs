@@ -40,6 +40,7 @@ namespace SICOVI.Data
             return resultado;
         }
 
+
         public bool deleteFormulariosXRango(int ID_Rango, string NomFormulario)
         {
             bool resultado = false;
@@ -88,7 +89,7 @@ namespace SICOVI.Data
             SqlDataReader dataReader;
             List<Rangos> listaRangos = new List<Rangos>();
             string consulta = "SELECT ID_Rango, Nombre FROM Rango";
-
+            
             dataReader = conexion.retornarLista(consulta, null);
 
             while (dataReader.Read())
@@ -103,6 +104,45 @@ namespace SICOVI.Data
             conexion.desconectar();
 
             return listaRangos;
+        }
+
+        public List<string> obtenerNombreRangos()
+        {
+            SqlDataReader dataReader;
+            List<string> listaRangos = new List<string>();
+            string consulta = "SELECT Nombre FROM Rango";
+
+            dataReader = conexion.retornarLista(consulta, null);
+
+            while (dataReader.Read())
+            {
+                listaRangos.Add(dataReader["Nombre"].ToString());
+            }
+
+            conexion.desconectar();
+
+            return listaRangos;
+        }
+
+        public int obtenerIdRango(string NomRango)
+        {
+            SqlDataReader dataReader;
+            int Id = 0;
+            SqlParameterCollection parametro = new SqlCommand().Parameters;
+            string consulta = "SELECT ID_Rango FROM Rango WHERE Nombre = @NomRango";
+
+            parametro.AddWithValue("@NomRango", NomRango);
+
+            dataReader = conexion.retornarLista(consulta, parametro);
+
+            while (dataReader.Read())
+            {
+                Id = (int)dataReader["ID_Rango"];
+            }
+
+            conexion.desconectar();
+
+            return Id;
         }
 
         public Rangos obtenerUnRango(int ID_Rango)

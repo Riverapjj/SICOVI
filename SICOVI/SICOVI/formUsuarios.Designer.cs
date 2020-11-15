@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.txtRango = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
@@ -49,6 +48,7 @@
             this.iconButton8 = new FontAwesome.Sharp.IconButton();
             this.txtNombre = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbRangos = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -61,8 +61,11 @@
             this.dgvAdmin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdmin.Location = new System.Drawing.Point(27, 242);
             this.dgvAdmin.Name = "dgvAdmin";
+            this.dgvAdmin.ReadOnly = true;
+            this.dgvAdmin.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAdmin.Size = new System.Drawing.Size(977, 264);
             this.dgvAdmin.TabIndex = 2;
+            this.dgvAdmin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAdmin_CellClick);
             // 
             // btnLimpiar
             // 
@@ -83,6 +86,7 @@
             this.btnLimpiar.TabIndex = 25;
             this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnModificar
             // 
@@ -103,6 +107,7 @@
             this.btnModificar.TabIndex = 24;
             this.btnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnAgregar
             // 
@@ -131,11 +136,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(341, 9);
+            this.label1.Location = new System.Drawing.Point(427, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(379, 38);
+            this.label1.Size = new System.Drawing.Size(209, 38);
             this.label1.TabIndex = 26;
-            this.label1.Text = "ADMINISTRADORES";
+            this.label1.Text = "USUARIOS";
             // 
             // iconButton1
             // 
@@ -170,22 +175,6 @@
             this.iconButton2.Size = new System.Drawing.Size(44, 19);
             this.iconButton2.TabIndex = 30;
             this.iconButton2.UseVisualStyleBackColor = true;
-            // 
-            // txtRango
-            // 
-            this.txtRango.Depth = 0;
-            this.txtRango.Hint = "Rango";
-            this.txtRango.Location = new System.Drawing.Point(423, 77);
-            this.txtRango.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtRango.Name = "txtRango";
-            this.txtRango.PasswordChar = '\0';
-            this.txtRango.SelectedText = "";
-            this.txtRango.SelectionLength = 0;
-            this.txtRango.SelectionStart = 0;
-            this.txtRango.Size = new System.Drawing.Size(213, 23);
-            this.txtRango.TabIndex = 29;
-            this.txtRango.UseSystemPasswordChar = false;
-            this.txtRango.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRango_KeyPress);
             // 
             // txtUsuario
             // 
@@ -372,11 +361,21 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // formAdmin
+            // cmbRangos
+            // 
+            this.cmbRangos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRangos.FormattingEnabled = true;
+            this.cmbRangos.Location = new System.Drawing.Point(423, 73);
+            this.cmbRangos.Name = "cmbRangos";
+            this.cmbRangos.Size = new System.Drawing.Size(213, 21);
+            this.cmbRangos.TabIndex = 41;
+            // 
+            // formUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1016, 518);
+            this.Controls.Add(this.cmbRangos);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.iconButton8);
             this.Controls.Add(this.iconButton7);
@@ -389,7 +388,6 @@
             this.Controls.Add(this.iconButton3);
             this.Controls.Add(this.iconButton2);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.txtRango);
             this.Controls.Add(this.iconButton1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLimpiar);
@@ -397,7 +395,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formAdmin";
+            this.Name = "formUsuarios";
             this.Text = "formAdmin";
             ((System.ComponentModel.ISupportInitialize)(this.dgvAdmin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -415,7 +413,6 @@
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton iconButton1;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtRango;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtUsuario;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton4;
@@ -428,5 +425,6 @@
         private FontAwesome.Sharp.IconButton iconButton8;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombre;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox cmbRangos;
     }
 }

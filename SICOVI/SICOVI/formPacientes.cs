@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -217,14 +217,14 @@ namespace SICOVI
                     }
                     else
                     {
-                        MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0 2");
+                        MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0");
                         Limpiar();
                     }
 
                 }
                 else 
                 {
-                    MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0 1");
+                    MessageBox.Show("El formato del DUI es incorrecto. Ej: 00000000-0");
                     Limpiar();
                 }
                 
@@ -338,27 +338,27 @@ namespace SICOVI
 
         private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-
-            //borrar();
-            //if (char.IsDigit(e.KeyChar))
-            //{
-            //    e.Handled = false;
-            //}
-            ////para tecla backspace
-            //else if (char.IsControl(e.KeyChar))
-            //{
-            //    e.Handled = false;
-            //}
 
 
+            borrar();
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            //para tecla backspace
+            else if (char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
 
-            //else
-            //{
-            //    e.Handled = true;
-            //    restrinciones5();
 
-            //}
+
+            else
+            {
+                e.Handled = true;
+                restrinciones5();
+
+            }
 
         }
 

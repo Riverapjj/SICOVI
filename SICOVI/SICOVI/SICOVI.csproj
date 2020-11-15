@@ -109,12 +109,6 @@
     <Compile Include="formControles.Designer.cs">
       <DependentUpon>formControles.cs</DependentUpon>
     </Compile>
-    <Compile Include="formRecepcionistas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formRecepcionistas.Designer.cs">
-      <DependentUpon>formRecepcionistas.cs</DependentUpon>
-    </Compile>
     <Compile Include="formSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,9 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="formRangos.resx">
       <DependentUpon>formRangos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formRecepcionistas.resx">
-      <DependentUpon>formRecepcionistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formSplash.resx">
       <DependentUpon>formSplash.cs</DependentUpon>

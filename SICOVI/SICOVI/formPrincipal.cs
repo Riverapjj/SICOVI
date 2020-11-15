@@ -57,25 +57,19 @@ namespace SICOVI
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
-            mostrarSubMenu();
+            abrirFormHijo(new formUsuarios());
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            ocultarSubMenu();
-            abrirFormHijo(new formUsuarios());
         }
 
         private void btnDoctor_Click(object sender, EventArgs e)
         {
-            ocultarSubMenu();
-            abrirFormHijo(new formDoctores());
         }
 
         private void btnRecepcionista_Click(object sender, EventArgs e)
         {
-            ocultarSubMenu();
-            abrirFormHijo(new formRecepcionistas());
         }
 
         private Form formActivo = null;
