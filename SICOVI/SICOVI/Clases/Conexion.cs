@@ -16,16 +16,17 @@ namespace SICOVI.Clases
         public Conexion()
         {
             string servidor, cadena;
-            servidor = "LAPTOP\\LAPTOP";
+            servidor = DatosSesion.NomInstancia;
 
             cadena = "Data Source=" + servidor + ";Initial Catalog=SICOVI;"
                 + "Integrated Security=true;";
-
+            MessageBox.Show(cadena);
             conn = new SqlConnection(cadena);
         }
 
         public void conectar()
         {
+            
             if (conn.State == ConnectionState.Open)
             {
                 conn.Close();

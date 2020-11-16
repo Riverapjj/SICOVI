@@ -9,5 +9,6 @@ namespace SICOVI.Clases
     public static class DatosSesion
     {
         public static string NomUsuario;
+        public static string NomInstancia;
     }
 }
