@@ -190,7 +190,6 @@ namespace SICOVI
             if (vacio())
             {
                 string formatoDUI = txtDUI.Text;
-                string formatoDUI = txtDUI.Text;
                 if (formatoDUI.Count(char.IsDigit) == 9)
                 {
                     if (formatoDUI[8] == '-')
