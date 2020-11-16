@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SICOVI.Modelos;
 using SICOVI.Data;
+using System.Text.RegularExpressions;
 
 namespace SICOVI
 {
@@ -189,29 +190,38 @@ namespace SICOVI
             if (vacio())
             {
                 string formatoDUI = txtDUI.Text;
+                string formatoDUI = txtDUI.Text;
                 if (formatoDUI.Count(char.IsDigit) == 9)
                 {
                     if (formatoDUI[8] == '-')
                     {
-                        try
+                        bool confirmarFormatoDUI = Regex.IsMatch(formatoDUI, @"^[0-9]{8}\-\d*");
+                        if (confirmarFormatoDUI)
                         {
-                            paciente = new Paciente();
-                            pacientesD = new PacientesD();
+                            try
+                            {
+                                paciente = new Paciente();
+                                pacientesD = new PacientesD();
 
-                            paciente.Nombre_paciente = txtNomPaciente.Text;
-                            paciente.Nombre_madre = txtNomMadre.Text;
-                            paciente.Nombre_padre = txtNomPadre.Text;
-                            paciente.Nombre_responsable = txtNomRespon.Text;
-                            paciente.Num_dui_resposable = txtDUI.Text;
-                            paciente.Num_seguro_responsable = txtISSS.Text;
-                            paciente.Fecha_nacimiento = dtpFechaNac.Value;
+                                paciente.Nombre_paciente = txtNomPaciente.Text;
+                                paciente.Nombre_madre = txtNomMadre.Text;
+                                paciente.Nombre_padre = txtNomPadre.Text;
+                                paciente.Nombre_responsable = txtNomRespon.Text;
+                                paciente.Num_dui_resposable = txtDUI.Text;
+                                paciente.Num_seguro_responsable = txtISSS.Text;
+                                paciente.Fecha_nacimiento = dtpFechaNac.Value;
 
-                            pacientesD.insertarPacientes(paciente);
-                            MessageBox.Show("Datos ingresados correctamente.");
+                                pacientesD.insertarPacientes(paciente);
+                                MessageBox.Show("Datos ingresados correctamente.");
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                            }
                         }
-                        catch (Exception ex)
+                        else 
                         {
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("El formato de DUI no es correcto.");
                         }
 
                     }
@@ -341,24 +351,6 @@ namespace SICOVI
 
 
             borrar();
-            if (char.IsDigit(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            //para tecla backspace
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-
-
-
-            else
-            {
-                e.Handled = true;
-                restrinciones5();
-
-            }
 
         }
 
