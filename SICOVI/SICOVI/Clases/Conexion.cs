@@ -20,7 +20,6 @@ namespace SICOVI.Clases
 
             cadena = "Data Source=" + servidor + ";Initial Catalog=SICOVI;"
                 + "Integrated Security=true;";
-            MessageBox.Show(cadena);
             conn = new SqlConnection(cadena);
         }
 
